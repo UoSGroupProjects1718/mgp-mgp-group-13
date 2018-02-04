@@ -195,7 +195,7 @@ Transform:
   m_GameObject: {fileID: 196329245}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.05, z: 0}
-  m_LocalScale: {x: 16.5, y: 26.5, z: 1}
+  m_LocalScale: {x: 24.3, y: 39, z: 1}
   m_Children: []
   m_Father: {fileID: 1279177117}
   m_RootOrder: 0
@@ -350,7 +350,7 @@ Camera:
   far clip plane: 998.1
   field of view: 60
   orthographic: 1
-  orthographic size: 13.14
+  orthographic size: 19.3
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -445,7 +445,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1496199034}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -6.05, z: 0}
+  m_LocalPosition: {x: 0, y: -8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1054913118}
@@ -498,7 +498,15 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4180298473124566, guid: 3a9752509066de340af7ca19d702f832, type: 2}
       propertyPath: m_LocalPosition.y
-      value: -3.78
+      value: 1.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180298473124566, guid: 3a9752509066de340af7ca19d702f832, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180298473124566, guid: 3a9752509066de340af7ca19d702f832, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.86
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a9752509066de340af7ca19d702f832, type: 2}
@@ -525,7 +533,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1535809242}
   m_LocalRotation: {x: 0, y: 0, z: 1, w: 0}
-  m_LocalPosition: {x: 0, y: 5.99, z: 0}
+  m_LocalPosition: {x: 0, y: 8, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1768139269}
@@ -610,6 +618,28 @@ Prefab:
     - target: {fileID: 1259747666016580, guid: 3a9752509066de340af7ca19d702f832, type: 2}
       propertyPath: m_Name
       value: P1 Fisher Strip
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180298473124566, guid: 3a9752509066de340af7ca19d702f832, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -4.86
+      objectReference: {fileID: 0}
+    - target: {fileID: 4180298473124566, guid: 3a9752509066de340af7ca19d702f832, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -2.8
+      objectReference: {fileID: 0}
+    - target: {fileID: 212155747157071054, guid: 3a9752509066de340af7ca19d702f832,
+        type: 2}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: b781be6174b04a74e87317df3e34ce07,
+        type: 3}
+    - target: {fileID: 4180298473124566, guid: 3a9752509066de340af7ca19d702f832, type: 2}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1079199142317608, guid: 3a9752509066de340af7ca19d702f832, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 3a9752509066de340af7ca19d702f832, type: 2}
