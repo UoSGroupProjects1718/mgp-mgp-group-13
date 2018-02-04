@@ -498,7 +498,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4180298473124566, guid: 3a9752509066de340af7ca19d702f832, type: 2}
       propertyPath: m_LocalPosition.y
-      value: 1.67
+      value: 2.81
       objectReference: {fileID: 0}
     - target: {fileID: 4180298473124566, guid: 3a9752509066de340af7ca19d702f832, type: 2}
       propertyPath: m_LocalScale.y
@@ -702,8 +702,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   P1Line: {fileID: 1404769334}
   P2Line: {fileID: 75852811}
-  P1_yMin: -6.5
-  P1_yMax: -4
+  P1_yMin: -7.5
+  P1_yMax: -2
   P2_yMin: 0
   P2_yMax: 0
   speed: 50
