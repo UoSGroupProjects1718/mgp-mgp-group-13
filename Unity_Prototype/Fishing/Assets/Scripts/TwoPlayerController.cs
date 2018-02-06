@@ -14,7 +14,6 @@ public class TwoPlayerController : MonoBehaviour {
     {
         lineDown = false;
         lineMoving = false;
-        inputClicked = false;
     }
 
     // Update is called once per frame
