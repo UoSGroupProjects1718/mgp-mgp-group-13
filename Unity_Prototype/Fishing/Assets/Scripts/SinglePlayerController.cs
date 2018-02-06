@@ -6,7 +6,7 @@ public class SinglePlayerController : MonoBehaviour {
 
     public GameObject line;
     public float yMin, yMax, speed;
-    private bool lineDown, lineMoving, inputClicked;
+    private bool lineDown, lineMoving;
 
 
     // Use this for initialization
@@ -14,7 +14,7 @@ public class SinglePlayerController : MonoBehaviour {
     {
         lineDown = false;
         lineMoving = false;
-        inputClicked = false;
+      
     }
 
     // Update is called once per frame
