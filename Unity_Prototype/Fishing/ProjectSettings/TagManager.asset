@@ -6,6 +6,7 @@ TagManager:
   tags:
   - fish
   - UIStrip
+  - line
   layers:
   - Default
   - TransparentFX
