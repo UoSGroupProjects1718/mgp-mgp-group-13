@@ -20,13 +20,7 @@ public class TwoPlayerController : MonoBehaviour {
     void Update()
     {
 
-        // 
-        //
-        //  player taps, line isn't already and it
-        //
-        //
-        //
-
+     
 
         if (Input.GetButton("Fire1") && lineMoving == false && lineDown == false) // the player taps, the line isn't already moving and its current position is up
         {
@@ -34,7 +28,7 @@ public class TwoPlayerController : MonoBehaviour {
             downFrame();        // animate a frame of downward movement
         }
 
-            if (Input.GetButton("Fire1") && lineMoving == false && lineDown == true) // the player taps, the line isn't already moving and its current position is down
+        if (Input.GetButton("Fire1") && lineMoving == false && lineDown == true) // the player taps, the line isn't already moving and its current position is down
         {
             lineMoving = true;  //set the line as moving
             upFrame();          // animate a frame of upward movement
@@ -83,5 +77,4 @@ public class TwoPlayerController : MonoBehaviour {
         }
 
     }
-
 }

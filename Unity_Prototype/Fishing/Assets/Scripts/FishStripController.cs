@@ -7,9 +7,14 @@ using UnityEngine;
 /// holds its own object pool for fish (fishPool)
 /// handles its own deactivation of disused fish, keeps them inside its list.
 
-
-
-
+[System.Serializable]
+public class Fish
+    // defines a fish as having a name, a sprite and a reference
+{
+    public string Name;
+    public Sprite FishSprite;
+    public int Reference;
+}
 
 public class FishStripController : MonoBehaviour {
 
@@ -19,8 +24,12 @@ public class FishStripController : MonoBehaviour {
     public Transform SpawnPoint;// set in unity, reference to location at which fish will spawn
     public int poolLimit;       // set in unity, max size of fishPool
     List<GameObject> fishPool;  // obect pool for fish for this player
-    
-    // Use this for initialization
+
+    public int Direction;
+
+    public Fish[] FishPrefabs;  // array for data population of fish
+
+
     void Start()
     {
         SpawnTick = SpawnRate;
@@ -30,10 +39,13 @@ public class FishStripController : MonoBehaviour {
                       
         for  (int i = 0; i< poolLimit; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
+            //int randIndex = Random.Range(0, FishPrefabs.Length);
+
             GameObject obj = (GameObject)Instantiate(fish);
+            FishController fishControl = obj.GetComponent<FishController>();
+            fishControl.SetupFish(Direction, FishPrefabs[2]); // replace 2 with randIndex to restore random fish
             obj.SetActive(false);
             fishPool.Add(obj);
-                
         }
 
     }
