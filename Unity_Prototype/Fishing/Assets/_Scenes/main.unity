@@ -165,7 +165,7 @@ Prefab:
         type: 2}
       propertyPath: fish
       value: 
-      objectReference: {fileID: 1420905620924034, guid: 32c9efc4b6e8dad41b30e5bf276087cb,
+      objectReference: {fileID: 1933447400111966, guid: 28298ffb68a52634188526e7886df180,
         type: 2}
     - target: {fileID: 114709670607682608, guid: dd1e8a5340102e34981f90382dd6f156,
         type: 2}
@@ -176,6 +176,11 @@ Prefab:
         type: 2}
       propertyPath: SpawnRate
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114709670607682608, guid: dd1e8a5340102e34981f90382dd6f156,
+        type: 2}
+      propertyPath: Direction
+      value: -1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd1e8a5340102e34981f90382dd6f156, type: 2}
@@ -583,18 +588,8 @@ Prefab:
         type: 2}
       propertyPath: fish
       value: 
-      objectReference: {fileID: 1021739829296450, guid: 6973ce71f8c6eb54fb7360a509bd8d44,
+      objectReference: {fileID: 1933447400111966, guid: 28298ffb68a52634188526e7886df180,
         type: 2}
-    - target: {fileID: 114709670607682608, guid: dd1e8a5340102e34981f90382dd6f156,
-        type: 2}
-      propertyPath: poolLimit
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 114709670607682608, guid: dd1e8a5340102e34981f90382dd6f156,
-        type: 2}
-      propertyPath: SpawnRate
-      value: 1
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd1e8a5340102e34981f90382dd6f156, type: 2}
   m_IsPrefabParent: 0
@@ -1181,8 +1176,6 @@ MonoBehaviour:
   P2Line: {fileID: 75852811}
   P1_yMin: -10
   P1_yMax: -5.3
-  P2_yMin: 0
-  P2_yMax: 0
   speed: 50
 --- !u!1 &2132869735
 GameObject:

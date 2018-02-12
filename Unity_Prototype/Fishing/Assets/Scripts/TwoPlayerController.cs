@@ -20,13 +20,7 @@ public class TwoPlayerController : MonoBehaviour {
     void Update()
     {
 
-        // 
-        //
-        //  player taps, line isn't already and it
-        //
-        //
-        //
-
+     
 
         if (Input.GetButton("Fire1") && lineMoving == false && lineDown == false) // the player taps, the line isn't already moving and its current position is up
         {
