@@ -20,7 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4581261836800204}
   - component: {fileID: 212723075169140978}
-  - component: {fileID: 50072482551723274}
+  - component: {fileID: 50979776304712690}
   - component: {fileID: 70590028286900112}
   - component: {fileID: 114982942646017124}
   m_Layer: 0
@@ -43,7 +43,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50072482551723274
+--- !u!50 &50979776304712690
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
@@ -76,8 +76,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 0.28, y: 0.2}
-  m_Direction: 0
+  m_Size: {x: 0.28, y: 0.1}
+  m_Direction: 1
 --- !u!114 &114982942646017124
 MonoBehaviour:
   m_ObjectHideFlags: 1

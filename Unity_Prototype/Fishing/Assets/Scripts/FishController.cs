@@ -10,6 +10,8 @@ public class FishController : MonoBehaviour {
     private Fish Info;
     private SpriteRenderer SprRen;
 
+    private bool touching;
+
     public void SetupFish(int dir, Fish info)
     {
         SprRen = GetComponent<SpriteRenderer>();
@@ -33,5 +35,28 @@ public class FishController : MonoBehaviour {
     private void OnEnable()
     {
         
+    }
+
+    public void OnTriggerEnter2D(Collider2D collision)
+    {
+        print("Enter");
+        touching = true;
+        if (touching)
+        {
+            if (collision.gameObject.CompareTag("line"))
+            {
+                if (Input.GetButton("Fire1"))
+                {
+                    gameObject.SetActive(false);
+                }
+
+            }
+        }
+    }
+
+    public void OnTriggerExit2D(Collider2D collision)
+    {
+        print("Exit");
+        touching = false;
     }
 }
