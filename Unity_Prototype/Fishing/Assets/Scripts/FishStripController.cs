@@ -39,11 +39,11 @@ public class FishStripController : MonoBehaviour {
                       
         for  (int i = 0; i< poolLimit; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
-            //int randIndex = Random.Range(0, FishPrefabs.Length);
+            int randIndex = Random.Range(0, FishPrefabs.Length);
 
             GameObject obj = (GameObject)Instantiate(fish);
             FishController fishControl = obj.GetComponent<FishController>();
-            fishControl.SetupFish(Direction, FishPrefabs[2]); // replace 2 with randIndex to restore random fish
+            fishControl.SetupFish(Direction, FishPrefabs[randIndex]); // replace 2 with randIndex to restore random fish
             obj.SetActive(false);
             fishPool.Add(obj);
         }
