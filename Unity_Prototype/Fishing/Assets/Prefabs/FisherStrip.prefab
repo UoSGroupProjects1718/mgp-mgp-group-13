@@ -20,12 +20,12 @@ GameObject:
   m_Component:
   - component: {fileID: 4180298473124566}
   - component: {fileID: 212155747157071054}
-  - component: {fileID: 50649847519049816}
+  - component: {fileID: 50923026149692586}
   - component: {fileID: 58254807492612318}
   - component: {fileID: 114959914752857448}
   m_Layer: 0
   m_Name: line
-  m_TagString: Untagged
+  m_TagString: line
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -102,7 +102,7 @@ Transform:
   m_Father: {fileID: 4023043519539958}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &50649847519049816
+--- !u!50 &50923026149692586
 Rigidbody2D:
   serializedVersion: 4
   m_ObjectHideFlags: 1
