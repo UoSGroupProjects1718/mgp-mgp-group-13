@@ -11,7 +11,8 @@ public class FishController : MonoBehaviour {
     private SpriteRenderer SprRen;
     public int PlayerID;
 
-    public GameObject controller;
+    private GameObject controller;
+    private TwoPlayerController PlayerRef;
 
   
     private bool touching;
@@ -29,7 +30,9 @@ public class FishController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         SprRen = GetComponent<SpriteRenderer>();
-        
+
+        controller = GameObject.Find("PlayerController");
+        PlayerRef = controller.GetComponent<TwoPlayerController>();
     }
 	
 	// Update is called once per frame
@@ -42,8 +45,7 @@ public class FishController : MonoBehaviour {
         if (touching == true && Input.GetButton("Fire1")) //basic check, need to incorperate lineMoving from player controller  GetComponent<TwoPlayerController>().lineMoving == true)
         {
             gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
-            TwoPlayerController playerController = controller.GetComponent<TwoPlayerController>();
-            playerController.addScore(PlayerID, 2);
+            PlayerRef.addScore(PlayerID, Info.ScoreValue);
         }
     }
 

@@ -223,6 +223,11 @@ Prefab:
       propertyPath: playerRef
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114709670607682608, guid: dd1e8a5340102e34981f90382dd6f156,
+        type: 2}
+      propertyPath: Direction
+      value: -1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd1e8a5340102e34981f90382dd6f156, type: 2}
   m_IsPrefabParent: 0
@@ -617,6 +622,74 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!1 &1031865578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1670303324362376, guid: 46f68767486e1b542a8b523277f3febc,
+    type: 2}
+  m_PrefabInternal: {fileID: 35778352}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1031865581}
+  - component: {fileID: 1031865580}
+  - component: {fileID: 1031865579}
+  m_Layer: 0
+  m_Name: PlayerController
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1031865579
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114856885466412598, guid: 46f68767486e1b542a8b523277f3febc,
+    type: 2}
+  m_PrefabInternal: {fileID: 35778352}
+  m_GameObject: {fileID: 1031865578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 804565ed533221349815d6801e87af5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  P1Line: {fileID: 1404769334}
+  P2Line: {fileID: 75852811}
+  P1_yMin: -10
+  P1_yMax: -5.3
+  speed: 50
+  lineDown: 0
+  lineMoving: 0
+  inputClicked: 0
+--- !u!114 &1031865580
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114557862780827054, guid: 46f68767486e1b542a8b523277f3febc,
+    type: 2}
+  m_PrefabInternal: {fileID: 35778352}
+  m_GameObject: {fileID: 1031865578}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f0a0f08c9fe52b44dae57426061087ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  line: {fileID: 1404769334}
+  yMin: -6.5
+  yMax: -4
+  speed: 50
+--- !u!4 &1031865581
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 4176238283376134, guid: 46f68767486e1b542a8b523277f3febc,
+    type: 2}
+  m_PrefabInternal: {fileID: 35778352}
+  m_GameObject: {fileID: 1031865578}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -18.06, y: -3.16, z: 10.435762}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &1054913118 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4907955574489790, guid: dd1e8a5340102e34981f90382dd6f156,
@@ -664,22 +737,6 @@ Prefab:
     - target: {fileID: 1201121766318222, guid: dd1e8a5340102e34981f90382dd6f156, type: 2}
       propertyPath: m_Name
       value: P1 Fish Strip
-      objectReference: {fileID: 0}
-    - target: {fileID: 114709670607682608, guid: dd1e8a5340102e34981f90382dd6f156,
-        type: 2}
-      propertyPath: fish
-      value: 
-      objectReference: {fileID: 1933447400111966, guid: 28298ffb68a52634188526e7886df180,
-        type: 2}
-    - target: {fileID: 114709670607682608, guid: dd1e8a5340102e34981f90382dd6f156,
-        type: 2}
-      propertyPath: Direction
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 114709670607682608, guid: dd1e8a5340102e34981f90382dd6f156,
-        type: 2}
-      propertyPath: playerRef
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd1e8a5340102e34981f90382dd6f156, type: 2}

@@ -161,20 +161,21 @@ MonoBehaviour:
   fish: {fileID: 1933447400111966, guid: 28298ffb68a52634188526e7886df180, type: 2}
   SpawnPoint: {fileID: 4573799136752066}
   poolLimit: 5
-  Direction: -1
+  playerRef: 1
+  Direction: 1
   FishPrefabs:
   - Name: Small
     FishSprite: {fileID: 21300000, guid: b0d3eaa5d6c45f54e89b1471f560fa5f, type: 3}
-    Reference: 0
+    ScoreValue: 1
   - Name: Medium
     FishSprite: {fileID: 21300002, guid: b0d3eaa5d6c45f54e89b1471f560fa5f, type: 3}
-    Reference: 1
+    ScoreValue: 2
   - Name: Large
     FishSprite: {fileID: 21300004, guid: b0d3eaa5d6c45f54e89b1471f560fa5f, type: 3}
-    Reference: 2
+    ScoreValue: 3
   - Name: JellyFish
     FishSprite: {fileID: 21300006, guid: b0d3eaa5d6c45f54e89b1471f560fa5f, type: 3}
-    Reference: 3
+    ScoreValue: -1
 --- !u!212 &212567273964968482
 SpriteRenderer:
   m_ObjectHideFlags: 1

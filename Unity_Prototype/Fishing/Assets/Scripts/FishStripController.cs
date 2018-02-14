@@ -13,7 +13,7 @@ public class Fish
 {
     public string Name;
     public Sprite FishSprite;
-    public int Reference;
+    public int ScoreValue;
 }
 
 public class FishStripController : MonoBehaviour {
@@ -44,7 +44,7 @@ public class FishStripController : MonoBehaviour {
 
             GameObject obj = (GameObject)Instantiate(fish);
             FishController fishControl = obj.GetComponent<FishController>();
-            fishControl.SetupFish(Direction, FishPrefabs[randIndex],playerRef); // replace 2 with randIndex to restore random fish
+            fishControl.SetupFish(Direction, FishPrefabs[randIndex],playerRef); 
             obj.SetActive(false);
             fishPool.Add(obj);
         }
