@@ -29,6 +29,7 @@ sysinfo.txt
 *.apk
 *.unitypackage
 
-Unity_Prototype/Fishing/Library/**
-Unity_Prototype/Fishing/Temp/**
+Unity_Prototype/Fishing/Library/
+Unity_Prototype/Fishing/Temp/
+Unity_Prototype/Fishing/.vs/
 
