@@ -24,6 +24,7 @@ public class FishStripController : MonoBehaviour {
     public Transform SpawnPoint;// set in unity, reference to location at which fish will spawn
     public int poolLimit;       // set in unity, max size of fishPool
     List<GameObject> fishPool;  // obect pool for fish for this player
+    public int playerRef;
 
     public int Direction;
 
@@ -43,7 +44,7 @@ public class FishStripController : MonoBehaviour {
 
             GameObject obj = (GameObject)Instantiate(fish);
             FishController fishControl = obj.GetComponent<FishController>();
-            fishControl.SetupFish(Direction, FishPrefabs[randIndex]); // replace 2 with randIndex to restore random fish
+            fishControl.SetupFish(Direction, FishPrefabs[randIndex],playerRef); // replace 2 with randIndex to restore random fish
             obj.SetActive(false);
             fishPool.Add(obj);
         }

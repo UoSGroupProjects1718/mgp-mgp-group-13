@@ -90,6 +90,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
+  PlayerID: 0
+  controller: {fileID: 1670303324362376, guid: 46f68767486e1b542a8b523277f3febc, type: 2}
 --- !u!212 &212723075169140978
 SpriteRenderer:
   m_ObjectHideFlags: 1

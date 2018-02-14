@@ -9,15 +9,21 @@ public class FishController : MonoBehaviour {
 
     private Fish Info;
     private SpriteRenderer SprRen;
+    public int PlayerID;
 
+    public GameObject controller;
+
+  
     private bool touching;
 
-    public void SetupFish(int dir, Fish info)
+    public void SetupFish(int dir, Fish info, int PlayerRef)
     {
         SprRen = GetComponent<SpriteRenderer>();
         Info = info;
         direction = dir;
         SprRen.sprite = Info.FishSprite;
+        PlayerID = PlayerRef;
+
     }
 
 	// Use this for initialization
@@ -36,6 +42,8 @@ public class FishController : MonoBehaviour {
         if (touching == true && Input.GetButton("Fire1")) //basic check, need to incorperate lineMoving from player controller  GetComponent<TwoPlayerController>().lineMoving == true)
         {
             gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
+            TwoPlayerController playerController = controller.GetComponent<TwoPlayerController>();
+            playerController.addScore(PlayerID, 2);
         }
     }
 
@@ -44,16 +52,19 @@ public class FishController : MonoBehaviour {
         
     }
 
+    private void OnDisable()
+    {
+        
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        print("Enter");
         touching = true;
 
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
-        print("Exit");
         touching = false;
     }
 }
