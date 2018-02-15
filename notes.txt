@@ -1,22 +1,14 @@
 // working notes and useful links
 
 
+c# list shuffle algo:
 
+https://stackoverflow.com/questions/273313/randomize-a-listt
+- code example
+
+https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
+- Fisher-Yates information
 
 
 -- sourcetree (git client)
 
--- all source files to be power of 2 x power of 2 px in dimension
-
-
-c# list shuffle algo:
-https://stackoverflow.com/questions/273313/randomize-a-listt
-
-
-add object pool to replace instantiation of fish:
-
-https://unity3d.com/learn/tutorials/topics/scripting/object-pooling
-
-https://answers.unity.com/questions/861583/how-to-use-pool-to-spawn-object-instead-of-instant.html
-https://assetstore.unity.com/packages/tools/ez-pooling-19941
-https://assetstore.unity.com/packages/templates/systems/ez-core-45956

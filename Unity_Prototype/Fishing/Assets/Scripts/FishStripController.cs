@@ -34,22 +34,22 @@ public class FishStripController : MonoBehaviour {
     void Start()
     {
         SpawnTick = SpawnRate;
-        
+
 
         // OBJECT POOL
-        // Balence soloution 1:
+        // Balance Solution 1:
         // game spawns 100 fish in the object pool for each player
         // they are generated with a percentage chance of being each fish
         // they are given to the player randomly
         // the player would never be able to catch all avalible fish in the pool so randomisation is based on what gets pulled
         //
         //
-        // Balence Soloution 2:
+        // Balance Solution 2:
         // game spawns small (10 ish) fish pools which operate as above
         // once each player has caught a fish, both players get given an identical fish from a shared object pool
         //
         //
-        //Soloution 1:
+        //Balance Solutionn 1:
         fishPool = new List<GameObject>(); // instantiates the list
                       
         for  (int i = 0; i< 50; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
