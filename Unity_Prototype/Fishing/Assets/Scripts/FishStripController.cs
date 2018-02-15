@@ -35,25 +35,75 @@ public class FishStripController : MonoBehaviour {
     {
         SpawnTick = SpawnRate;
         
-        // temporary object pool populator
+
+        // OBJECT POOL
+        // Balence soloution 1:
+        // game spawns 100 fish in the object pool for each player
+        // they are generated with a percentage chance of being each fish
+        // they are given to the player randomly
+        // the player would never be able to catch all avalible fish in the pool so randomisation is based on what gets pulled
+        //
+        //
+        // Balence Soloution 2:
+        // game spawns small (10 ish) fish pools which operate as above
+        // once each player has caught a fish, both players get given an identical fish from a shared object pool
+        //
+        //
+        //Soloution 1:
         fishPool = new List<GameObject>(); // instantiates the list
                       
-        for  (int i = 0; i< poolLimit; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        for  (int i = 0; i< 50; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
-            int randIndex = Random.Range(0, FishPrefabs.Length);
+            // int randIndex = Random.Range(0, FishPrefabs.Length);
 
             GameObject obj = (GameObject)Instantiate(fish);
             FishController fishControl = obj.GetComponent<FishController>();
-            fishControl.SetupFish(Direction, FishPrefabs[randIndex],playerRef); 
+            fishControl.SetupFish(Direction, FishPrefabs[0],playerRef); 
             obj.SetActive(false);
             fishPool.Add(obj);
         }
+
+        for (int i = 0; i < 30; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        {
+     
+            GameObject obj = (GameObject)Instantiate(fish);
+            FishController fishControl = obj.GetComponent<FishController>();
+            fishControl.SetupFish(Direction, FishPrefabs[1], playerRef);
+            obj.SetActive(false);
+            fishPool.Add(obj);
+        }
+
+
+        for (int i = 0; i < 15; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        {
+            
+            GameObject obj = (GameObject)Instantiate(fish);
+            FishController fishControl = obj.GetComponent<FishController>();
+            fishControl.SetupFish(Direction, FishPrefabs[2], playerRef);
+            obj.SetActive(false);
+            fishPool.Add(obj);
+        }
+
+
+        for (int i = 0; i < 5; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        {
+           
+            GameObject obj = (GameObject)Instantiate(fish);
+            FishController fishControl = obj.GetComponent<FishController>();
+            fishControl.SetupFish(Direction, FishPrefabs[3], playerRef);
+            obj.SetActive(false);
+            fishPool.Add(obj);
+        }
+
+
+
+
 
     }
 
     void spawnFish()
     
-    // function for spawning fish as they are needed
+    // function for activating fish as they are needed
 
     {
         for (int i = 0; i < fishPool.Count; i++) //loops through the pool
