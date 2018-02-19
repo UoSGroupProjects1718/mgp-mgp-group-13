@@ -23,6 +23,7 @@ GameObject:
   - component: {fileID: 50979776304712690}
   - component: {fileID: 70590028286900112}
   - component: {fileID: 114982942646017124}
+  - component: {fileID: 95928797846167228}
   m_Layer: 0
   m_Name: Fish
   m_TagString: fish
@@ -78,6 +79,23 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.28, y: 0.1}
   m_Direction: 1
+--- !u!95 &95928797846167228
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1933447400111966}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 614596aa6a313ef46a1918deb5ca8e2f, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114982942646017124
 MonoBehaviour:
   m_ObjectHideFlags: 1
