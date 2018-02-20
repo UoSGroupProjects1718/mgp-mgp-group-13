@@ -4,7 +4,11 @@
 c# list shuffle algo:
 
 https://stackoverflow.com/questions/273313/randomize-a-listt
-- code example
+https://gist.github.com/polysmurf/7393396
+https://answers.unity.com/questions/486626/how-can-i-shuffle-alist.html
+https://social.msdn.microsoft.com/Forums/vstudio/en-US/8bc6e424-7dfc-43ab-b8a7-5c031d8ebcb9/c-how-to-return-a-liststring?forum=csharpgeneral
+20/2/2018
+
 
 https://en.wikipedia.org/wiki/Fisher%E2%80%93Yates_shuffle
 - Fisher-Yates information

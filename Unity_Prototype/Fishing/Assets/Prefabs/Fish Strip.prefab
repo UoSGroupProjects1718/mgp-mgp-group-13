@@ -160,21 +160,21 @@ MonoBehaviour:
   SpawnRate: 1
   fish: {fileID: 1933447400111966, guid: 28298ffb68a52634188526e7886df180, type: 2}
   SpawnPoint: {fileID: 4573799136752066}
-  poolLimit: 100
+  poolLimit: 10
   playerRef: 1
   Direction: 1
   FishPrefabs:
   - Name: Small
-    FishSprite: {fileID: 21300000, guid: b0d3eaa5d6c45f54e89b1471f560fa5f, type: 3}
+    FishSprite: {fileID: 21300000, guid: 34f6bb02d1d1dc143971e81ed908c26d, type: 3}
     ScoreValue: 1
   - Name: Medium
-    FishSprite: {fileID: 21300002, guid: b0d3eaa5d6c45f54e89b1471f560fa5f, type: 3}
+    FishSprite: {fileID: 21300000, guid: 56bbb5f63e9ce34478ec82a43c810fda, type: 3}
     ScoreValue: 2
   - Name: Large
-    FishSprite: {fileID: 21300004, guid: b0d3eaa5d6c45f54e89b1471f560fa5f, type: 3}
+    FishSprite: {fileID: 21300000, guid: 65228dff85f6cc14abbf54904f915900, type: 3}
     ScoreValue: 3
   - Name: JellyFish
-    FishSprite: {fileID: 21300006, guid: b0d3eaa5d6c45f54e89b1471f560fa5f, type: 3}
+    FishSprite: {fileID: 21300000, guid: 252802c85cbd5bd4ca0c857f0399a593, type: 3}
     ScoreValue: -1
 --- !u!212 &212567273964968482
 SpriteRenderer:

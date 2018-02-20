@@ -25,14 +25,28 @@ public class FishStripController : MonoBehaviour {
     public int poolLimit;       // set in unity, max size of fishPool
     List<GameObject> fishPool;  // obect pool for fish for this player
     public int playerRef;
-
     public int Direction;
 
     public Fish[] FishPrefabs;  // array for data population of fish
 
 
+    public void ShuffleFish(List<GameObject> fishPool) // fisher-yates shuffle function takes a list of gameobjects fishPool as an input and shuffles it
+    {
+        
+        for (int i = 0; i < fishPool.Count; i++)
+        {
+            GameObject temp = fishPool[i];
+            int randomIndex = Random.Range(i, fishPool.Count);
+            fishPool[i] = fishPool[randomIndex];
+            fishPool[randomIndex] = temp;
+        }
+        
+    }
+
+
     void Start()
     {
+
         SpawnTick = SpawnRate;
 
 
@@ -52,7 +66,7 @@ public class FishStripController : MonoBehaviour {
         //Balance Solutionn 1:
         fishPool = new List<GameObject>(); // instantiates the list
                       
-        for  (int i = 0; i< 50; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        for  (int i = 0; i< 3; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
             // int randIndex = Random.Range(0, FishPrefabs.Length);
 
@@ -63,7 +77,7 @@ public class FishStripController : MonoBehaviour {
             fishPool.Add(obj);
         }
 
-        for (int i = 0; i < 30; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        for (int i = 0; i < 5; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
      
             GameObject obj = (GameObject)Instantiate(fish);
@@ -74,7 +88,7 @@ public class FishStripController : MonoBehaviour {
         }
 
 
-        for (int i = 0; i < 15; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        for (int i = 0; i < 1; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
             
             GameObject obj = (GameObject)Instantiate(fish);
@@ -85,7 +99,7 @@ public class FishStripController : MonoBehaviour {
         }
 
 
-        for (int i = 0; i < 5; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        for (int i = 0; i < 1; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
            
             GameObject obj = (GameObject)Instantiate(fish);
@@ -106,6 +120,8 @@ public class FishStripController : MonoBehaviour {
     // function for activating fish as they are needed
 
     {
+        ShuffleFish(fishPool);
+
         for (int i = 0; i < fishPool.Count; i++) //loops through the pool
         {
             if(!fishPool[i].activeInHierarchy)  // checks the fish isn't already in use
