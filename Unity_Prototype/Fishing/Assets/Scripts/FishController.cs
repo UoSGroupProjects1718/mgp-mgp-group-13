@@ -51,7 +51,16 @@ public class FishController : MonoBehaviour {
         if (touching == true && Info.ScoreValue == -1) //jellyfish handler
         {
             PlayerRef.addScore(PlayerID, Info.ScoreValue);
-            //make rods move !bool for lineMoving and LineDOwn
+            PlayerRef.lineMoving = true;
+            if (PlayerRef.lineDown == true)
+            {
+                PlayerRef.upFrame();
+            }
+            else
+            {
+                PlayerRef.downFrame();
+            }
+            touching = false;
         }
     }
 

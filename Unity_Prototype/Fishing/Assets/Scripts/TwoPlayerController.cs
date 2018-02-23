@@ -49,7 +49,7 @@ public class TwoPlayerController : MonoBehaviour {
 
 
     // define functions for animating frames of line movement
-    void downFrame()
+    public void downFrame()
     {
         if (P1Line.transform.position.y > P1_yMin)  // check the lines arent beyond the limits (only check once using P1's line positions as they will always move in perfect syncronisation and prevent logic conflicts
         {
@@ -64,7 +64,7 @@ public class TwoPlayerController : MonoBehaviour {
 
     }
 
-    void upFrame()
+    public void upFrame()
     {
         if (P1Line.transform.position.y < P1_yMax) // as above
         {
