@@ -48,7 +48,7 @@ public class FishController : MonoBehaviour {
             PlayerRef.addScore(PlayerID, Info.ScoreValue);
             
         }
-        if (touching == true && Info.ScoreValue == -1) //jellyfish handler
+        if (touching == true && Info.Name == "JellyFish") //jellyfish handler -changed from info.ScoreValue == -1 to prevent magic numbers.
         {
             PlayerRef.addScore(PlayerID, Info.ScoreValue);
             PlayerRef.lineMoving = true;

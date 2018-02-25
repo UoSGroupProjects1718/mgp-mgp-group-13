@@ -27,7 +27,7 @@ public class FishStripController : MonoBehaviour {
     public int playerRef;
     public int Direction;
 
-    public Fish[] FishPrefabs;  // array for data population of fish
+    public Fish[] SpawnData;  // array for data population of fish
 
 
     public void ShuffleFish(List<GameObject> fishPool) // fisher-yates shuffle function takes a list of gameobjects fishPool as an input and shuffles it
@@ -68,11 +68,11 @@ public class FishStripController : MonoBehaviour {
                       
         for  (int i = 0; i< 3; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
-            // int randIndex = Random.Range(0, FishPrefabs.Length);
+            // int randIndex = Random.Range(0, SpawnData.Length);
 
             GameObject obj = (GameObject)Instantiate(fish);
             FishController fishControl = obj.GetComponent<FishController>();
-            fishControl.SetupFish(Direction, FishPrefabs[0],playerRef); 
+            fishControl.SetupFish(Direction, SpawnData[0],playerRef); 
             obj.SetActive(false);
             fishPool.Add(obj);
         }
@@ -82,7 +82,7 @@ public class FishStripController : MonoBehaviour {
      
             GameObject obj = (GameObject)Instantiate(fish);
             FishController fishControl = obj.GetComponent<FishController>();
-            fishControl.SetupFish(Direction, FishPrefabs[1], playerRef);
+            fishControl.SetupFish(Direction, SpawnData[1], playerRef);
             obj.SetActive(false);
             fishPool.Add(obj);
         }
@@ -93,7 +93,7 @@ public class FishStripController : MonoBehaviour {
             
             GameObject obj = (GameObject)Instantiate(fish);
             FishController fishControl = obj.GetComponent<FishController>();
-            fishControl.SetupFish(Direction, FishPrefabs[2], playerRef);
+            fishControl.SetupFish(Direction, SpawnData[2], playerRef);
             obj.SetActive(false);
             fishPool.Add(obj);
         }
@@ -104,7 +104,7 @@ public class FishStripController : MonoBehaviour {
            
             GameObject obj = (GameObject)Instantiate(fish);
             FishController fishControl = obj.GetComponent<FishController>();
-            fishControl.SetupFish(Direction, FishPrefabs[3], playerRef);
+            fishControl.SetupFish(Direction, SpawnData[3], playerRef);
             obj.SetActive(false);
             fishPool.Add(obj);
         }
