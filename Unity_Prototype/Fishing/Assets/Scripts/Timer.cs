@@ -34,9 +34,9 @@ public class Timer : MonoBehaviour {
         }
 
 
-
-        float alpha = RoundTime / initialTime;
-        marker.transform.position = Vector3.Lerp(endMarker.position, startMarker.position, alpha);
+        // handle animation of timer
+        float alpha = RoundTime / initialTime;  // create a float between 0 and 1 as a ratio of "time passed"
+        marker.transform.position = Vector3.Lerp(endMarker.position, startMarker.position, alpha); // lerp this alpha to move the fish smoothly
     }
 
 }
