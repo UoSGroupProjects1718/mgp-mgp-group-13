@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class TwoPlayerController : MonoBehaviour {
 
@@ -8,12 +9,16 @@ public class TwoPlayerController : MonoBehaviour {
     public float P1_yMin, P1_yMax, speed; // set in unity, tweakable limits for movement of lines.
     public bool lineDown, lineMoving, inputClicked; // used internally to animate lines.
     private int P1Score = 0, P2Score = 0;
+    public Text scoreP1;
+    public Text scoreP2;
 
     // Use this for initialization
     void Start()
     {
         lineDown = false; // makes sure that the line is in its starting position
         lineMoving = false;
+        scoreP1.text = P1Score.ToString();
+        scoreP2.text = P2Score.ToString();
     }
 
     // Update is called once per frame
@@ -84,13 +89,16 @@ public class TwoPlayerController : MonoBehaviour {
         if (PlayerRef == 1)
         {
             P1Score += scoreValue;
+            scoreP1.text = P1Score.ToString();            
+
         }
         if (PlayerRef == 2)
         {
             P2Score += scoreValue;
+            scoreP2.text = P2Score.ToString();
         }
 
-        print("Player1: " + P1Score.ToString());
-        print("Player2: " + P2Score.ToString());
+        //print("Player1: " + P1Score.ToString());
+        //print("Player2: " + P2Score.ToString());
     }
 }

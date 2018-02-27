@@ -167,6 +167,16 @@ Prefab:
       propertyPath: P2Line
       value: 
       objectReference: {fileID: 75852811}
+    - target: {fileID: 114856885466412598, guid: 46f68767486e1b542a8b523277f3febc,
+        type: 2}
+      propertyPath: scoreP1
+      value: 
+      objectReference: {fileID: 856097138}
+    - target: {fileID: 114856885466412598, guid: 46f68767486e1b542a8b523277f3febc,
+        type: 2}
+      propertyPath: scoreP2
+      value: 
+      objectReference: {fileID: 1082553430}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46f68767486e1b542a8b523277f3febc, type: 2}
   m_IsPrefabParent: 0
@@ -901,6 +911,8 @@ MonoBehaviour:
   lineDown: 0
   lineMoving: 0
   inputClicked: 0
+  scoreP1: {fileID: 856097138}
+  scoreP2: {fileID: 1082553430}
 --- !u!114 &1031865580
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1001,15 +1013,15 @@ Canvas:
   serializedVersion: 3
   m_RenderMode: 1
   m_Camera: {fileID: 1163797991}
-  m_PlaneDistance: 0
+  m_PlaneDistance: 10
   m_PixelPerfect: 1
   m_ReceivesEvents: 1
   m_OverrideSorting: 0
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_AdditionalShaderChannelsFlag: 0
-  m_SortingLayerID: 0
-  m_SortingOrder: 3
+  m_SortingLayerID: 1092431351
+  m_SortingOrder: 4
   m_TargetDisplay: 0
 --- !u!224 &1055220580
 RectTransform:

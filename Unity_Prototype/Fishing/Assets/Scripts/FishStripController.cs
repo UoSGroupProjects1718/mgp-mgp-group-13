@@ -79,7 +79,7 @@ public class FishStripController : MonoBehaviour {
 
         for (int i = 0; i < 5; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
-     
+
             GameObject obj = (GameObject)Instantiate(fish);
             FishController fishControl = obj.GetComponent<FishController>();
             fishControl.SetupFish(Direction, SpawnData[1], playerRef);
@@ -90,7 +90,7 @@ public class FishStripController : MonoBehaviour {
 
         for (int i = 0; i < 1; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
-            
+
             GameObject obj = (GameObject)Instantiate(fish);
             FishController fishControl = obj.GetComponent<FishController>();
             fishControl.SetupFish(Direction, SpawnData[2], playerRef);
@@ -101,7 +101,7 @@ public class FishStripController : MonoBehaviour {
 
         for (int i = 0; i < 1; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
-           
+
             GameObject obj = (GameObject)Instantiate(fish);
             FishController fishControl = obj.GetComponent<FishController>();
             fishControl.SetupFish(Direction, SpawnData[3], playerRef);
