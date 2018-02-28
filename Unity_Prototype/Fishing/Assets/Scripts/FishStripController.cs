@@ -27,6 +27,12 @@ public class FishStripController : MonoBehaviour {
     public int playerRef;
     public int Direction;
 
+    public int bigFish;
+    public int medFish;
+    public int smlFish;
+    public int jelFish;
+
+
     public Fish[] SpawnData;  // array for data population of fish
 
 
@@ -66,7 +72,7 @@ public class FishStripController : MonoBehaviour {
         //Balance Solutionn 1:
         fishPool = new List<GameObject>(); // instantiates the list
                       
-        for  (int i = 0; i< 3; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        for  (int i = 0; i< bigFish; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
             // int randIndex = Random.Range(0, SpawnData.Length);
 
@@ -77,7 +83,7 @@ public class FishStripController : MonoBehaviour {
             fishPool.Add(obj);
         }
 
-        for (int i = 0; i < 5; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        for (int i = 0; i < medFish; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
 
             GameObject obj = (GameObject)Instantiate(fish);
@@ -88,7 +94,7 @@ public class FishStripController : MonoBehaviour {
         }
 
 
-        for (int i = 0; i < 1; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        for (int i = 0; i < smlFish; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
 
             GameObject obj = (GameObject)Instantiate(fish);
@@ -99,7 +105,7 @@ public class FishStripController : MonoBehaviour {
         }
 
 
-        for (int i = 0; i < 1; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        for (int i = 0; i < jelFish; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
         {
 
             GameObject obj = (GameObject)Instantiate(fish);
