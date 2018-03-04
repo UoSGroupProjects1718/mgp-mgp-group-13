@@ -31,7 +31,7 @@ public class Timer : MonoBehaviour {
 
         else if (RoundTime <= 0) // when counter reaches zero call end the level
         {
-            SceneManager.LoadScene("win", LoadSceneMode.Single);
+            SceneManager.LoadScene("win", LoadSceneMode.Single); // load the win screen
         }
 
 
