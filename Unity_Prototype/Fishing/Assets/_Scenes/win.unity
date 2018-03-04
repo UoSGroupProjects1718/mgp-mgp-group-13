@@ -633,6 +633,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e532e9d46ea3524086883fb0c2bfadc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p1P1Score: {fileID: 2111897947}
+  p1P2Score: {fileID: 361964300}
+  p1Text: {fileID: 1631177808}
+  p2P1Score: {fileID: 392451822}
+  p2P2Score: {fileID: 1126126796}
+  p2Text: {fileID: 804330417}
 --- !u!4 &1242991869
 Transform:
   m_ObjectHideFlags: 0
