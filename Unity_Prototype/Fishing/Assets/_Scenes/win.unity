@@ -220,6 +220,46 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 110286908}
   m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+--- !u!1 &406595833
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 406595835}
+  - component: {fileID: 406595834}
+  m_Layer: 0
+  m_Name: touchcontroller
+  m_TagString: Untagged
+  m_Icon: {fileID: 5132851093641282708, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &406595834
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 406595833}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b14e70ca6c17c148b76c356fe62cf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &406595835
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 406595833}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -4.75, y: 11.55, z: 0.15284742}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &772855850
 Prefab:
   m_ObjectHideFlags: 0
@@ -229,7 +269,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4298730723905986, guid: ccf69281bf161f647b434d655a615e1e, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -2.5
+      value: -4.74
       objectReference: {fileID: 0}
     - target: {fileID: 4298730723905986, guid: ccf69281bf161f647b434d655a615e1e, type: 2}
       propertyPath: m_LocalPosition.y
@@ -447,7 +487,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1242991867}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.89, y: 10.71, z: -4.609253}
+  m_LocalPosition: {x: -4.79, y: 11.17, z: -4.609253}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
