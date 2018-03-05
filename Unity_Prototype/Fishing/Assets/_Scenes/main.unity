@@ -884,6 +884,7 @@ GameObject:
   - component: {fileID: 1031865581}
   - component: {fileID: 1031865580}
   - component: {fileID: 1031865579}
+  - component: {fileID: 1031865582}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Untagged
@@ -943,6 +944,17 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1031865582
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1031865578}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b14e70ca6c17c148b76c356fe62cf86, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1054913118 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4907955574489790, guid: dd1e8a5340102e34981f90382dd6f156,
