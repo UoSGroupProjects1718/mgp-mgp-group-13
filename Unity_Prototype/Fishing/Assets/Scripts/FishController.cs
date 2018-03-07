@@ -12,7 +12,7 @@ public class FishController : MonoBehaviour {
     public int PlayerID;
 
     private GameObject controller;
-    private TwoPlayerController PlayerRef;
+    private TwoPlayerController PlayerCont;
 
   
     private bool touching;
@@ -32,21 +32,35 @@ public class FishController : MonoBehaviour {
         SprRen = GetComponent<SpriteRenderer>();
 
         controller = GameObject.Find("PlayerController");
-        PlayerRef = controller.GetComponent<TwoPlayerController>();
+        PlayerCont = controller.GetComponent<TwoPlayerController>();
     }
 	
 	// Update is called once per frame
 	void Update () {
 
-        Vector3 tickMove = new Vector3(1 * speed * direction * Time.deltaTime, 0.0f, 0.0f);
-        transform.position += tickMove;
+        if (PlayerID == 1)
+        {
+            Vector3 tickMove = new Vector3((speed * direction * Time.deltaTime * TwoPlayerController.fishBonusSpeedP1), 0.0f, 0.0f); // added fishBonusSpeed and removed magic number '1' AM
+            transform.position += tickMove;
+
+        }
+
+        if (PlayerID == 2)
+        {
+            Vector3 tickMove = new Vector3((speed * direction * Time.deltaTime * TwoPlayerController.fishBonusSpeedP2), 0.0f, 0.0f); // added fishBonusSpeed and removed magic number '1' AM
+            transform.position += tickMove;
+
+        }
+
+
+
         if (touching == true) //basic check, need to incorperate lineMoving from player controller  GetComponent<TwoPlayerController>().lineMoving == true)
         {
             CatchFish(Info);
             if (Input.GetButton("Fire1"))
             {
                 gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
-                PlayerRef.addScore(PlayerID, Info.ScoreValue);
+                PlayerCont.addScore(PlayerID, Info.ScoreValue);
             }
         }
         
@@ -74,19 +88,19 @@ public class FishController : MonoBehaviour {
 
     void CatchFish(Fish fish)
     {
-        if (PlayerRef.lineMoving == false)
+        if (PlayerCont.lineMoving == false)
         {
             if (fish.Name == "JellyFish")
             {
-                PlayerRef.addScore(PlayerID, fish.ScoreValue);
-                PlayerRef.lineMoving = true;
-                if (PlayerRef.lineDown == true)
+                PlayerCont.addScore(PlayerID, fish.ScoreValue);
+                PlayerCont.lineMoving = true;
+                if (PlayerCont.lineDown == true)
                 {
-                    PlayerRef.upFrame();
+                    PlayerCont.upFrame();
                 }
                 else
                 {
-                    PlayerRef.downFrame();
+                    PlayerCont.downFrame();
                 }
                 touching = false;
             }

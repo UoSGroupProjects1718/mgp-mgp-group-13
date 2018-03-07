@@ -204,6 +204,36 @@ Prefab:
       propertyPath: m_RootOrder
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 114518143918679238, guid: dbf8f42838f85c143a0414115c851f05,
+        type: 2}
+      propertyPath: m_IsOn
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114518143918679238, guid: dbf8f42838f85c143a0414115c851f05,
+        type: 2}
+      propertyPath: m_Transition
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 224484963148223838, guid: dbf8f42838f85c143a0414115c851f05,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 135.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 224381712289912910, guid: dbf8f42838f85c143a0414115c851f05,
+        type: 2}
+      propertyPath: m_AnchoredPosition.y
+      value: 288
+      objectReference: {fileID: 0}
+    - target: {fileID: 223993432717030304, guid: dbf8f42838f85c143a0414115c851f05,
+        type: 2}
+      propertyPath: m_RenderMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 223993432717030304, guid: dbf8f42838f85c143a0414115c851f05,
+        type: 2}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1957891330}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbf8f42838f85c143a0414115c851f05, type: 2}
   m_IsPrefabParent: 0

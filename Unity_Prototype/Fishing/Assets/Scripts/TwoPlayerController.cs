@@ -8,7 +8,8 @@ public class TwoPlayerController : MonoBehaviour {
     public GameObject P1Line, P2Line; // references to each players line objects
     public float P1_yMin, P1_yMax, speed; // set in unity, tweakable limits for movement of lines.
     public bool lineDown, lineMoving, inputClicked; // used internally to animate lines.
-    public static int P1Score, P2Score;
+    public static int P1Score, P2Score, fishBonusSpeedP1, fishBonusSpeedP2; 
+
     public Text scoreP1;
     public Text scoreP2;
 
@@ -17,6 +18,9 @@ public class TwoPlayerController : MonoBehaviour {
     {
         P1Score = 0; 
         P2Score = 0;
+        fishBonusSpeedP1 = 1;
+        fishBonusSpeedP2 = 1;
+
         lineDown = false; // makes sure that the line is in its starting position
         lineMoving = false;
         scoreP1.text = P1Score.ToString();
@@ -27,7 +31,7 @@ public class TwoPlayerController : MonoBehaviour {
     void Update()
     {
 
-        print(lineMoving);
+        
         if ((Input.GetButton("Fire1") || Input.touchCount >0) && lineMoving == false && lineDown == false) // the player taps, the line isn't already moving and its current position is up
         {
             lineMoving = true;  // set the line as moving
@@ -87,6 +91,8 @@ public class TwoPlayerController : MonoBehaviour {
 
     public void addScore(int PlayerRef, int scoreValue)
     {
+        fishBonusSpeedP1 = 1; // whenever a fish is caught it should also end any bonus powerups
+        fishBonusSpeedP2 = 1;
         if (PlayerRef == 1)
         {
             P1Score += scoreValue;
