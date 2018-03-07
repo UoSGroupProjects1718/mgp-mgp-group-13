@@ -40,28 +40,16 @@ public class FishController : MonoBehaviour {
 
         Vector3 tickMove = new Vector3(1 * speed * direction * Time.deltaTime, 0.0f, 0.0f);
         transform.position += tickMove;
-
+        if (touching == true) //basic check, need to incorperate lineMoving from player controller  GetComponent<TwoPlayerController>().lineMoving == true)
+        {
+            CatchFish(Info);
+            if (Input.GetButton("Fire1"))
+            {
+                gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
+                PlayerRef.addScore(PlayerID, Info.ScoreValue);
+            }
+        }
         
-        if (touching == true && Input.GetButton("Fire1")) //basic check, need to incorperate lineMoving from player controller  GetComponent<TwoPlayerController>().lineMoving == true)
-        {
-            gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
-            PlayerRef.addScore(PlayerID, Info.ScoreValue);
-            
-        }
-        if (touching == true && Info.Name == "JellyFish") //jellyfish handler -changed from info.ScoreValue == -1 to prevent magic numbers.
-        {
-            PlayerRef.addScore(PlayerID, Info.ScoreValue);
-            PlayerRef.lineMoving = true;
-            if (PlayerRef.lineDown == true)
-            {
-                PlayerRef.upFrame();
-            }
-            else
-            {
-                PlayerRef.downFrame();
-            }
-            touching = false;
-        }
     }
 
     private void OnEnable()
@@ -77,12 +65,32 @@ public class FishController : MonoBehaviour {
     public void OnTriggerEnter2D(Collider2D collision)
     {
         touching = true;
-
     }
 
     void OnTriggerExit2D(Collider2D collision)
     {
         touching = false;
+    }
+
+    void CatchFish(Fish fish)
+    {
+        if (PlayerRef.lineMoving == false)
+        {
+            if (fish.Name == "JellyFish")
+            {
+                PlayerRef.addScore(PlayerID, fish.ScoreValue);
+                PlayerRef.lineMoving = true;
+                if (PlayerRef.lineDown == true)
+                {
+                    PlayerRef.upFrame();
+                }
+                else
+                {
+                    PlayerRef.downFrame();
+                }
+                touching = false;
+            }
+        }
     }
 }
 
