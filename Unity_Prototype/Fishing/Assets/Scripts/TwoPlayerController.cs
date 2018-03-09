@@ -28,10 +28,10 @@ public class TwoPlayerController : MonoBehaviour {
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
 
-        
+        print(lineMoving);
         if ((Input.GetButton("Fire1") || Input.touchCount >0) && lineMoving == false && lineDown == false) // the player taps, the line isn't already moving and its current position is up
         {
             lineMoving = true;  // set the line as moving
@@ -48,11 +48,13 @@ public class TwoPlayerController : MonoBehaviour {
         if (lineMoving == (true) && lineDown == false)  // if the line is already moving and its last complete position was up
         {
             downFrame();                                // animate a down frame
+            
         }
 
         if (lineMoving == (true) && lineDown == true)   // if the line is already moving and its last complete position was down
         {   
             upFrame();                                  // animate an up frame
+            
         }
        
     }

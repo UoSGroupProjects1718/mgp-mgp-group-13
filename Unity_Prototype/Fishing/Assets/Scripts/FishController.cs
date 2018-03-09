@@ -57,7 +57,7 @@ public class FishController : MonoBehaviour {
         if (touching == true) //basic check, need to incorperate lineMoving from player controller  GetComponent<TwoPlayerController>().lineMoving == true)
         {
             CatchFish(Info);
-            if (Input.GetButton("Fire1"))
+            if (Input.GetButton("Fire1") && PlayerCont.lineMoving == false)
             {
                 gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
                 PlayerCont.addScore(PlayerID, Info.ScoreValue);
@@ -94,14 +94,6 @@ public class FishController : MonoBehaviour {
             {
                 PlayerCont.addScore(PlayerID, fish.ScoreValue);
                 PlayerCont.lineMoving = true;
-                if (PlayerCont.lineDown == true)
-                {
-                    PlayerCont.upFrame();
-                }
-                else
-                {
-                    PlayerCont.downFrame();
-                }
                 touching = false;
             }
         }
