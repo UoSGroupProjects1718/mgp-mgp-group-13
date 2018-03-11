@@ -285,7 +285,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4094613346895308}
   m_Layer: 0
-  m_Name: menuScreenUI
+  m_Name: resetUI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
