@@ -12,7 +12,7 @@ public class powerUpSpeed : MonoBehaviour {
     {
 
         TwoPlayerController.fishBonusSpeedP2 = speedRatio;
-        StartCoroutine(SpeedPowerupTime());
+        StartCoroutine(SpeedPowerupTime(2));
 
     }
 
@@ -20,25 +20,27 @@ public class powerUpSpeed : MonoBehaviour {
     {
 
         TwoPlayerController.fishBonusSpeedP1 = speedRatio;
-        StartCoroutine(SpeedPowerupTime());
+        StartCoroutine(SpeedPowerupTime(1));
 
     }
 
 
     //coroutine for powerup time
-    public IEnumerator SpeedPowerupTime()
+    public IEnumerator SpeedPowerupTime(int player)
     {
     
         yield return new WaitForSeconds(speedTime);
-        SpeedPowerStop();
+        SpeedPowerStop(player);
     }
 
 
     //sets fish speed mutiplier to normal
-    void SpeedPowerStop()
+    void SpeedPowerStop(int player)
     {
-
+        if (player == 1)
         TwoPlayerController.fishBonusSpeedP1 = 1;
+
+        if (player ==2)
         TwoPlayerController.fishBonusSpeedP2 = 1;
     }
 
