@@ -217,7 +217,7 @@ public class FishStripController : MonoBehaviour {
 
         else if (SpawnTick <= 0) // when counter reaches zero call spawnfish function and reset the timer
         {
-            spawnFish(0); // spawn a fish
+            decideSpawn(); // spawn a fish
             SpawnTick = SpawnRate;
         }
     }
