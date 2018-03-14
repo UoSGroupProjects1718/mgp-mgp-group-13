@@ -101,10 +101,5 @@ public class FishController : MonoBehaviour {
 }
 
 
-// catch fish function
-// takes GameObject (Fish) as an input
-// sets an animation state in the player char
-// sets the line moving in the opposite direction
-// scores the correct player
-// removes the fish from the active pool.
+
 

@@ -71,7 +71,7 @@ public class FishStripController : MonoBehaviour {
     void decideSpawn()
         // this is a temporary sustem to allow dynamic manipulation of fish
     {
-        int rngesus = Random.Range(1, 100);
+        int rngesus = Random.Range(0, 101);
 
         if (playerRef == 1)
         // this controler handles two different players do must be duplicated as this is balence.
@@ -80,29 +80,21 @@ public class FishStripController : MonoBehaviour {
            //P1 is in the lead
             if (TwoPlayerController.P1Score > TwoPlayerController.P2Score)
             {
-                if (0   < rngesus & rngesus < 20)   spawnFish(0);
-                if (20  < rngesus & rngesus < 50)   spawnFish(1);
-                if (50  < rngesus & rngesus < 90)   spawnFish(2);
-                if (90  < rngesus)                  spawnFish(3);
+                SpawnFishRandomly(rngesus);
+
             }
 
 
             // p2 is in the lead
             if (TwoPlayerController.P1Score < TwoPlayerController.P2Score)
             {
-                if (0   < rngesus & rngesus < 20)   spawnFish(0);
-                if (20  < rngesus & rngesus < 50)   spawnFish(1);
-                if (50  < rngesus & rngesus < 90)   spawnFish(2);
-                if (90  < rngesus)                  spawnFish(3);
+                SpawnFishRandomly(rngesus);
             }
 
             // draw
             if (TwoPlayerController.P1Score == TwoPlayerController.P2Score)
             {
-                if (0   < rngesus & rngesus < 20)   spawnFish(0);
-                if (20  < rngesus & rngesus < 50)   spawnFish(1);
-                if (50  < rngesus & rngesus < 90)   spawnFish(2);
-                if (90  < rngesus)                  spawnFish(3);
+                SpawnFishRandomly(rngesus);
             }
 
         }
@@ -113,33 +105,34 @@ public class FishStripController : MonoBehaviour {
 
             if (TwoPlayerController.P1Score > TwoPlayerController.P2Score)
             {
-                if (0   < rngesus & rngesus < 20)   spawnFish(0);
-                if (20  < rngesus & rngesus < 50)   spawnFish(1);
-                if (50  < rngesus & rngesus < 90)   spawnFish(2);
-                if (90  < rngesus)                  spawnFish(3);
+                SpawnFishRandomly(rngesus);
             }
 
 
             //testing cleaner if structrue
             if (TwoPlayerController.P1Score < TwoPlayerController.P2Score)
             {
-                if (0   < rngesus & rngesus < 20)   spawnFish(0);
-                if (20  < rngesus & rngesus < 50)   spawnFish(1);
-                if (50  < rngesus & rngesus < 90)   spawnFish(2);
-                if (90  < rngesus)                  spawnFish(3);
+                SpawnFishRandomly(rngesus);
             }
 
             if (TwoPlayerController.P1Score == TwoPlayerController.P2Score)
             {
-                if (0   < rngesus & rngesus < 20)   spawnFish(0);
-                if (20  < rngesus & rngesus < 50)   spawnFish(1);
-                if (50  < rngesus & rngesus < 90)   spawnFish(2);
-                if (90  < rngesus)                  spawnFish(3);
+                SpawnFishRandomly(rngesus);
             }
 
         }
 
 
+    }
+
+    private void SpawnFishRandomly(int rngesus)
+    {
+        if (0 < rngesus && rngesus  <= 10) spawnFish(0);
+        if (10 < rngesus && rngesus <= 35) spawnFish(1);
+        if (35 < rngesus && rngesus <= 65) spawnFish(2);
+        if (65 < rngesus && rngesus <= 80) spawnFish(3);
+        if (80 < rngesus && rngesus <= 90) spawnFish(4);
+        if (90 < rngesus && rngesus <= 100) spawnFish(5);
     }
 
     void spawnFish(int fish)
@@ -175,7 +168,8 @@ public class FishStripController : MonoBehaviour {
         else if (SpawnTick <= 0) //timer reaches 0
         {
             decideSpawn(); // decide which fish to spawn
-            SpawnTick = SpawnRate; //reset timer
+            if (playerRef == 1) SpawnTick = (SpawnRate * powerUpSpeed.P1spawnRatio); //reset timer
+            if (playerRef == 2) SpawnTick = (SpawnRate * powerUpSpeed.P2spawnRatio);
         }
     }
 

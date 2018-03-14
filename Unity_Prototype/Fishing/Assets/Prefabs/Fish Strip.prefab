@@ -180,6 +180,12 @@ MonoBehaviour:
   - Name: JellyFish
     FishSprite: {fileID: 21300000, guid: 82bb35f1eb7cfe64ebe15294a519040f, type: 3}
     ScoreValue: -10
+  - Name: jellyPickup
+    FishSprite: {fileID: 21300000, guid: 26a8be82954a87e4fbad327ca83bbb60, type: 3}
+    ScoreValue: 0
+  - Name: speedPickup
+    FishSprite: {fileID: 21300000, guid: e40fe109c3716424daa424595814a2e1, type: 3}
+    ScoreValue: 0
 --- !u!212 &212567273964968482
 SpriteRenderer:
   m_ObjectHideFlags: 1

@@ -8,7 +8,8 @@ public class TwoPlayerController : MonoBehaviour {
     public GameObject P1Line, P2Line; // references to each players line objects
     public float P1_yMin, P1_yMax, speed; // set in unity, tweakable limits for movement of lines.
     public bool lineDown, lineMoving, inputClicked; // used internally to animate lines.
-    public static int P1Score, P2Score, fishBonusSpeedP1, fishBonusSpeedP2; 
+    public static int P1Score, P2Score;
+    public static float fishBonusSpeedP1, fishBonusSpeedP2; 
 
 
     public Text scoreP1;
