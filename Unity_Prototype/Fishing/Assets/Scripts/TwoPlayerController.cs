@@ -10,6 +10,7 @@ public class TwoPlayerController : MonoBehaviour {
     public bool lineDown, lineMoving, inputClicked; // used internally to animate lines.
     public static int P1Score, P2Score, fishBonusSpeedP1, fishBonusSpeedP2; 
 
+
     public Text scoreP1;
     public Text scoreP2;
 
