@@ -76,19 +76,18 @@ public class FishStripController : MonoBehaviour {
         if (playerRef == 1)
         // this controler handles two different players do must be duplicated as this is balence.
         {
-
+            rngesus += powerUpJelly.p1JellyFactor;
            //P1 is in the lead
-           // in this example (p1 is in the lead and we're looking at P1's spawns instea
             if (TwoPlayerController.P1Score > TwoPlayerController.P2Score)
             {
                 if (0   < rngesus & rngesus < 20)   spawnFish(0);
                 if (20  < rngesus & rngesus < 50)   spawnFish(1);
-                if (50  < rngesus & rngesus < 51)   spawnFish(2);
-                if (51  < rngesus)                  spawnFish(3);
+                if (50  < rngesus & rngesus < 90)   spawnFish(2);
+                if (90  < rngesus)                  spawnFish(3);
             }
 
 
-            // p2
+            // p2 is in the lead
             if (TwoPlayerController.P1Score < TwoPlayerController.P2Score)
             {
                 if (0   < rngesus & rngesus < 20)   spawnFish(0);
@@ -97,6 +96,7 @@ public class FishStripController : MonoBehaviour {
                 if (90  < rngesus)                  spawnFish(3);
             }
 
+            // draw
             if (TwoPlayerController.P1Score == TwoPlayerController.P2Score)
             {
                 if (0   < rngesus & rngesus < 20)   spawnFish(0);
@@ -109,6 +109,7 @@ public class FishStripController : MonoBehaviour {
 
         if (playerRef == 2)
         {
+            rngesus += powerUpJelly.p2JellyFactor; 
 
             if (TwoPlayerController.P1Score > TwoPlayerController.P2Score)
             {

@@ -160,7 +160,7 @@ MonoBehaviour:
   SpawnRate: 1
   fish: {fileID: 1933447400111966, guid: 28298ffb68a52634188526e7886df180, type: 2}
   SpawnPoint: {fileID: 4573799136752066}
-  poolLimit: 10
+  poolLimit: 20
   playerRef: 1
   Direction: 1
   bigFish: 2

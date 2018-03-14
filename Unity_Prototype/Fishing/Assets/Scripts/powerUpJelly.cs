@@ -12,7 +12,7 @@ public class powerUpJelly : MonoBehaviour
     //sets fish speed mutiplier to bonus value 
     public void JellyPowerStartP1()
     {
-        p1JellyFactor = jellyFactor;
+        p2JellyFactor = jellyFactor;
         StartCoroutine(JellyPowerupTime(2));
     }
 
