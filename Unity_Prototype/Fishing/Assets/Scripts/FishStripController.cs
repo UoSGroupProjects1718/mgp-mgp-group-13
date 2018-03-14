@@ -68,6 +68,122 @@ public class FishStripController : MonoBehaviour {
 
     }
 
+    void decideSpawn()
+    {
+        int rngesus = Random.Range(1, 100);
+
+        if (playerRef == 1)
+        // this controler handles two different players do must be duplicated as this is balence. needs to be refactored to be neater.
+        {
+
+           //P1 is in the lead
+            if (TwoPlayerController.P1Score > TwoPlayerController.P2Score)
+            {
+                if (0 < rngesus & rngesus < 20)
+                    spawnFish(0);
+
+                if (20 < rngesus & rngesus < 50)
+                    spawnFish(1);
+
+                if (50 < rngesus & rngesus < 90)
+                    spawnFish(2);
+
+                if (90 < rngesus)
+                    spawnFish(3);
+
+            }
+
+
+            // p2
+            if (TwoPlayerController.P1Score < TwoPlayerController.P2Score)
+            {
+                if (0 < rngesus & rngesus < 20)
+                    spawnFish(0);
+
+                if (20 < rngesus & rngesus < 50)
+                    spawnFish(1);
+
+                if (50 < rngesus & rngesus < 90)
+                    spawnFish(2);
+
+                if (90 < rngesus )
+                    spawnFish(3);
+
+            }
+
+            if (TwoPlayerController.P1Score == TwoPlayerController.P2Score)
+            {
+                if (0 < rngesus & rngesus < 20)
+                    spawnFish(0);
+
+                if (20 < rngesus & rngesus < 50)
+                    spawnFish(1);
+
+                if (50 < rngesus & rngesus < 90)
+                    spawnFish(2);
+
+                if (90 < rngesus)
+                    spawnFish(3);
+            }
+
+        }
+
+        if (playerRef == 2)
+        {
+
+            if (TwoPlayerController.P1Score > TwoPlayerController.P2Score)
+            {
+                if (0 < rngesus & rngesus < 20)
+                    spawnFish(0);
+
+                if (20 < rngesus & rngesus < 50)
+                    spawnFish(1);
+
+                if (50 < rngesus & rngesus < 90)
+                    spawnFish(2);
+
+                if (90 < rngesus)
+                    spawnFish(3);
+
+            }
+
+
+
+            if (TwoPlayerController.P1Score < TwoPlayerController.P2Score)
+            {
+                if (0 < rngesus & rngesus < 20)
+                    spawnFish(0);
+
+                if (20 < rngesus & rngesus < 50)
+                    spawnFish(1);
+
+                if (50 < rngesus & rngesus < 90)
+                    spawnFish(2);
+
+                if (90 < rngesus)
+                    spawnFish(3);
+
+            }
+
+            if (TwoPlayerController.P1Score == TwoPlayerController.P2Score)
+            {
+                if (0 < rngesus & rngesus < 20)
+                    spawnFish(0);
+
+                if (20 < rngesus & rngesus < 50)
+                    spawnFish(1);
+
+                if (50 < rngesus & rngesus < 90)
+                    spawnFish(2);
+
+                if (90 < rngesus)
+                    spawnFish(3);
+            }
+
+        }
+
+
+    }
 
     void spawnFish(int fish)
     
