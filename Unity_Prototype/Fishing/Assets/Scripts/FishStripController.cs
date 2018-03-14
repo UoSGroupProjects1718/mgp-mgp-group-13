@@ -38,7 +38,7 @@ public class FishStripController : MonoBehaviour {
 
     public void ShuffleFish(List<GameObject> fishPool) // fisher-yates shuffle function takes a list of gameobjects fishPool as an input and shuffles it
     {
-        
+     
         for (int i = 0; i < fishPool.Count; i++)
         {
             GameObject temp = fishPool[i];
@@ -55,85 +55,35 @@ public class FishStripController : MonoBehaviour {
 
         SpawnTick = SpawnRate;
 
-
-        // OBJECT POOL
-        // Balance Solution 1:
-        // game spawns 100 fish in the object pool for each player
-        // they are generated with a percentage chance of being each fish
-        // they are given to the player randomly
-        // the player would never be able to catch all avalible fish in the pool so randomisation is based on what gets pulled
-        //
-        //
-        // Balance Solution 2:
-        // game spawns small (10 ish) fish pools which operate as above
-        // once each player has caught a fish, both players get given an identical fish from a shared object pool
-        //
-        //
-        //Balance Solutionn 1:
         fishPool = new List<GameObject>(); // instantiates the list
                       
-        for  (int i = 0; i< bigFish; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
+        for  (int i = 0; i< poolLimit; i++) // instantiates <poolLimit> number of blank fish into the list and sets them as inactive
         {
             // int randIndex = Random.Range(0, SpawnData.Length);
 
             GameObject obj = (GameObject)Instantiate(fish);
-            FishController fishControl = obj.GetComponent<FishController>();
-            fishControl.SetupFish(Direction, SpawnData[0],playerRef); 
             obj.SetActive(false);
             fishPool.Add(obj);
         }
-
-        for (int i = 0; i < medFish; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
-        {
-
-            GameObject obj = (GameObject)Instantiate(fish);
-            FishController fishControl = obj.GetComponent<FishController>();
-            fishControl.SetupFish(Direction, SpawnData[1], playerRef);
-            obj.SetActive(false);
-            fishPool.Add(obj);
-        }
-
-
-        for (int i = 0; i < smlFish; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
-        {
-
-            GameObject obj = (GameObject)Instantiate(fish);
-            FishController fishControl = obj.GetComponent<FishController>();
-            fishControl.SetupFish(Direction, SpawnData[2], playerRef);
-            obj.SetActive(false);
-            fishPool.Add(obj);
-        }
-
-
-        for (int i = 0; i < jelFish; i++) // instantiates <poolLimit> number of fish into the list and sets them as inactive
-        {
-
-            GameObject obj = (GameObject)Instantiate(fish);
-            FishController fishControl = obj.GetComponent<FishController>();
-            fishControl.SetupFish(Direction, SpawnData[3], playerRef);
-            obj.SetActive(false);
-            fishPool.Add(obj);
-        }
-
-
-
-
 
     }
 
-    void spawnFish()
+
+    void spawnFish(int fish)
     
     // function for activating fish as they are needed
 
     {
-        ShuffleFish(fishPool);
+        //ShuffleFish(fishPool);
 
         for (int i = 0; i < fishPool.Count; i++) //loops through the pool
         {
             if(!fishPool[i].activeInHierarchy)  // checks the fish isn't already in use
             {
-                fishPool[i].transform.position = SpawnPoint.position;   
+                fishPool[i].transform.position = SpawnPoint.position;
                 fishPool[i].transform.rotation = SpawnPoint.rotation;
+                FishController fishControl = fishPool[i].GetComponent<FishController>(); // grabs the fishcontroler for that fish
+                fishControl.SetupFish(Direction, SpawnData[fish], playerRef);   //assigns the fish its data
                 fishPool[i].SetActive(true);    //moves it to the correct location and rotation then activates it
                 break;                          //only does this for the first fish it finds
             }
@@ -151,7 +101,7 @@ public class FishStripController : MonoBehaviour {
 
         else if (SpawnTick <= 0) // when counter reaches zero call spawnfish function and reset the timer
         {
-            spawnFish();
+            spawnFish(0); // spawn a fish
             SpawnTick = SpawnRate;
         }
     }
@@ -164,4 +114,5 @@ public class FishStripController : MonoBehaviour {
             other.gameObject.SetActive(false);
         }
     }
+        
 }
