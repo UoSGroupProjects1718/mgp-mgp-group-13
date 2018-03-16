@@ -7,7 +7,7 @@ public class powerUpJelly : MonoBehaviour
 
     public float jellyTime;
     public int jellyFactor;
-    public static int p1JellyFactor, p2JellyFactor;
+    public static int p1JellyFactor = 0 , p2JellyFactor = 0;
 
     //sets fish speed mutiplier to bonus value 
     public void JellyPowerStartP1()

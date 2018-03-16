@@ -38,7 +38,7 @@ public class FishStripController : MonoBehaviour {
 
     public void ShuffleFish(List<GameObject> fishPool) // fisher-yates shuffle function takes a list of gameobjects fishPool as an input and shuffles it
     {
-     
+
         for (int i = 0; i < fishPool.Count; i++)
         {
             GameObject temp = fishPool[i];
@@ -46,7 +46,7 @@ public class FishStripController : MonoBehaviour {
             fishPool[i] = fishPool[randomIndex];
             fishPool[randomIndex] = temp;
         }
-        
+
     }
 
 
@@ -56,8 +56,8 @@ public class FishStripController : MonoBehaviour {
         SpawnTick = SpawnRate;
 
         fishPool = new List<GameObject>(); // instantiates the list
-                      
-        for  (int i = 0; i< poolLimit; i++) // instantiates <poolLimit> number of blank fish into the list and sets them as inactive
+
+        for (int i = 0; i < poolLimit; i++) // instantiates <poolLimit> number of blank fish into the list and sets them as inactive
         {
             // int randIndex = Random.Range(0, SpawnData.Length);
 
@@ -68,71 +68,69 @@ public class FishStripController : MonoBehaviour {
 
     }
 
+
     void decideSpawn()
-        // this is a temporary sustem to allow dynamic manipulation of fish
     {
         int rngesus = Random.Range(0, 101);
+        int diff;
 
         if (playerRef == 1)
         // this controler handles two different players do must be duplicated as this is balence.
         {
+            diff = (TwoPlayerController.P1Score - TwoPlayerController.P2Score);
             rngesus += powerUpJelly.p1JellyFactor;
-           //P1 is in the lead
-            if (TwoPlayerController.P1Score > TwoPlayerController.P2Score)
-            {
-                SpawnFishRandomly(rngesus);
 
-            }
+                                                                //  big    med     sml     jellypwr spdpwr  jellyfish
+            if (diff <= -10)              SpawnFishRandomly(rngesus, 20,    25,     30,     10,     10,     5);
+            if (diff > -10 && diff <= -5) SpawnFishRandomly(rngesus, 20,    25,     30,     10,     10,     5);
 
+            if (diff >- 5 && diff < 5)    SpawnFishRandomly(rngesus, 20,    25,     30,     10,     10,     5);
 
-            // p2 is in the lead
-            if (TwoPlayerController.P1Score < TwoPlayerController.P2Score)
-            {
-                SpawnFishRandomly(rngesus);
-            }
-
-            // draw
-            if (TwoPlayerController.P1Score == TwoPlayerController.P2Score)
-            {
-                SpawnFishRandomly(rngesus);
-            }
+            if (diff >= 5 && diff < 10)   SpawnFishRandomly(rngesus, 10,    25,     35,     5,      5,      20);
+            if (diff >= 10)               SpawnFishRandomly(rngesus,  5,    25,     40,     0,      0,      30);
 
         }
+
+
+
 
         if (playerRef == 2)
+        // this controler handles two different players do must be duplicated as this is balence.
         {
-            rngesus += powerUpJelly.p2JellyFactor; 
+            diff = (TwoPlayerController.P2Score - TwoPlayerController.P1Score);
+            rngesus += powerUpJelly.p2JellyFactor;
 
-            if (TwoPlayerController.P1Score > TwoPlayerController.P2Score)
-            {
-                SpawnFishRandomly(rngesus);
-            }
+            //  big    med     sml     jellypwr spdpwr  jellyfish
+            if (diff <= -10) SpawnFishRandomly(rngesus, 20, 25, 30, 10, 10, 5);
+            if (diff > -10 && diff <= -5) SpawnFishRandomly(rngesus, 20, 25, 30, 10, 10, 5);
 
+            if (diff > -5 && diff < 5) SpawnFishRandomly(rngesus, 20, 25, 30, 10, 10, 5);
 
-            //testing cleaner if structrue
-            if (TwoPlayerController.P1Score < TwoPlayerController.P2Score)
-            {
-                SpawnFishRandomly(rngesus);
-            }
-
-            if (TwoPlayerController.P1Score == TwoPlayerController.P2Score)
-            {
-                SpawnFishRandomly(rngesus);
-            }
+            if (diff >= 5 && diff < 10) SpawnFishRandomly(rngesus, 10, 25, 35, 5, 5, 20);
+            if (diff >= 10) SpawnFishRandomly(rngesus, 5, 25, 40, 0, 0, 30);
 
         }
+    }
 
+    
+
+      void SpawnFishRandomly(int rngesus, int bigspawn, int medspawn, int smlspawn, int jellypowerspawn, int speedpowerspawn, int jellyspawn)
+    {
+
+        if (0 < rngesus && rngesus <= bigspawn) spawnFish(0);
+        if (bigspawn < rngesus && rngesus <= (bigspawn + medspawn)) spawnFish(1);
+        if ((bigspawn + medspawn) < rngesus && rngesus <= (bigspawn + medspawn + smlspawn)) spawnFish(2);
+        if ((bigspawn + medspawn + smlspawn) < rngesus && rngesus <= (bigspawn + medspawn + smlspawn + jellypowerspawn)) spawnFish(5);
+        if ((bigspawn + medspawn + smlspawn + jellypowerspawn) < rngesus && rngesus <= (bigspawn + medspawn + smlspawn + jellypowerspawn + speedpowerspawn)) spawnFish(4);
+        if ((bigspawn + medspawn + smlspawn + jellypowerspawn + speedpowerspawn) < rngesus) spawnFish(3);
 
     }
 
-    private void SpawnFishRandomly(int rngesus)
+
+    void tempfunc(int rngesus) 
     {
-        if (0 < rngesus && rngesus  <= 10) spawnFish(0);
-        if (10 < rngesus && rngesus <= 35) spawnFish(1);
-        if (35 < rngesus && rngesus <= 65) spawnFish(2);
-        if (65 < rngesus && rngesus <= 80) spawnFish(3);
-        if (80 < rngesus && rngesus <= 90) spawnFish(4);
-        if (90 < rngesus && rngesus <= 100) spawnFish(5);
+
+ 
     }
 
     void spawnFish(int fish)
