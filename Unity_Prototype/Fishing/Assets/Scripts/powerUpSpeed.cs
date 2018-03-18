@@ -7,13 +7,15 @@ public class powerUpSpeed : MonoBehaviour {
     public float speedTime;
     public float speedRatio;
     public static float P1spawnRatio, P2spawnRatio;
-    
+    public bool p1Ready = false, p2Ready = false;
+
     //sets fish speed mutiplier to bonus value 
     public void SpeedPowerStartP1()
     {
 
         TwoPlayerController.fishBonusSpeedP2 = speedRatio;
         P2spawnRatio = (1f / speedRatio);
+        p1Ready = false;
         //P2spawnRatio = 1;
         StartCoroutine(SpeedPowerupTime(2));
 
@@ -24,6 +26,7 @@ public class powerUpSpeed : MonoBehaviour {
 
         TwoPlayerController.fishBonusSpeedP1 = speedRatio;
         P1spawnRatio = (1f / speedRatio);
+        p2Ready = false;
         //P1spawnRatio = 1;
         StartCoroutine(SpeedPowerupTime(1));
 
