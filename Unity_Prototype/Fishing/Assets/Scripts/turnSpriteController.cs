@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class backgroundController : MonoBehaviour {
+public class turnSpriteController : MonoBehaviour {
 
     public SpriteRenderer p1bkg, p2bkg;
     public Sprite activeSprite, inactiveSprite;
