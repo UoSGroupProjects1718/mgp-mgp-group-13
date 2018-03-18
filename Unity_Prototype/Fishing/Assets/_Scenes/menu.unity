@@ -219,7 +219,7 @@ MonoBehaviour:
     type: 2}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 476325250}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f8012a599580aaa4c8c1f6b4984fd208, type: 3}
   m_Name: 
@@ -291,21 +291,6 @@ Prefab:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 1957891330}
-    - target: {fileID: 114518143918679238, guid: dbf8f42838f85c143a0414115c851f05,
-        type: 2}
-      propertyPath: m_IsOn
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 224179274490062606, guid: dbf8f42838f85c143a0414115c851f05,
-        type: 2}
-      propertyPath: m_AnchoredPosition.x
-      value: 151.57
-      objectReference: {fileID: 0}
-    - target: {fileID: 224179274490062606, guid: dbf8f42838f85c143a0414115c851f05,
-        type: 2}
-      propertyPath: m_AnchoredPosition.y
-      value: 385.17
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dbf8f42838f85c143a0414115c851f05, type: 2}
   m_IsPrefabParent: 0
@@ -351,6 +336,11 @@ Prefab:
     - target: {fileID: 4673438171680312, guid: 6ede19665381d004db46ba05b64d7b75, type: 2}
       propertyPath: m_LocalPosition.x
       value: 10.26
+      objectReference: {fileID: 0}
+    - target: {fileID: 114466311438206506, guid: 6ede19665381d004db46ba05b64d7b75,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ede19665381d004db46ba05b64d7b75, type: 2}
