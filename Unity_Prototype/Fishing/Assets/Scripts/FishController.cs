@@ -14,6 +14,7 @@ public class FishController : MonoBehaviour {
     private GameObject controller;
     private TwoPlayerController PlayerCont;
 
+
   
     private bool touching;
 
@@ -97,6 +98,24 @@ public class FishController : MonoBehaviour {
                 touching = false;
             }
         }
+
+        if (fish.Name == "jellyPickup")
+        {
+            if (PlayerID == 1) powerUpJelly.p1Ready = true;
+            else powerUpJelly.p2Ready = true;
+
+            touching = false;
+        }
+
+        if (fish.Name == "speedPickup")
+        {
+            if (PlayerID == 1) powerUpSpeed.p1Ready = true;
+            else powerUpSpeed.p2Ready = true;
+
+            PlayerCont.addScore(PlayerID, fish.ScoreValue);
+            touching = false;
+        }
+
     }
 }
 

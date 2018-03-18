@@ -1,13 +1,17 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class powerUpSpeed : MonoBehaviour {
+
+    public Button p1button, p2button;
 
     public float speedTime;
     public float speedRatio;
     public static float P1spawnRatio, P2spawnRatio;
-    public bool p1Ready = false, p2Ready = false;
+    public static bool p1Ready = false, p2Ready = false;
+
 
     //sets fish speed mutiplier to bonus value 
     public void SpeedPowerStartP1()
@@ -16,6 +20,7 @@ public class powerUpSpeed : MonoBehaviour {
         TwoPlayerController.fishBonusSpeedP2 = speedRatio;
         P2spawnRatio = (1f / speedRatio);
         p1Ready = false;
+        p1button.interactable = false;
         //P2spawnRatio = 1;
         StartCoroutine(SpeedPowerupTime(2));
 
@@ -27,6 +32,7 @@ public class powerUpSpeed : MonoBehaviour {
         TwoPlayerController.fishBonusSpeedP1 = speedRatio;
         P1spawnRatio = (1f / speedRatio);
         p2Ready = false;
+        p2button.interactable = false;
         //P1spawnRatio = 1;
         StartCoroutine(SpeedPowerupTime(1));
 
@@ -59,14 +65,16 @@ public class powerUpSpeed : MonoBehaviour {
     {
         P1spawnRatio = 1;
         P2spawnRatio = 1;
-	}
-	
-	// Update is called once per frame
-	void Update ()
+
+    }
+
+    // Update is called once per frame
+    void Update()
     {
-        //Debug.Log(speedRatio);
-        //Debug.Log(P2spawnRatio);
-       
-        
-	}
+        if (p1Ready) p1button.interactable = true;
+
+
+        if (p2Ready) p2button.interactable = true;
+  
+    }
 }

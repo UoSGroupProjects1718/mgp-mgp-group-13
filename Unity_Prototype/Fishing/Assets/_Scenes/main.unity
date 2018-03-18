@@ -205,7 +205,6 @@ GameObject:
   - component: {fileID: 118217643}
   - component: {fileID: 118217642}
   - component: {fileID: 118217644}
-  - component: {fileID: 118217645}
   m_Layer: 0
   m_Name: PowerupController
   m_TagString: Untagged
@@ -224,10 +223,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cba83be214e11943ae1fcef463243af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p1button: {fileID: 0}
+  p2button: {fileID: 0}
   speedTime: 3
   speedRatio: 2
-  p1Ready: 0
-  p2Ready: 0
 --- !u!4 &118217643
 Transform:
   m_ObjectHideFlags: 0
@@ -252,26 +251,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee8174e32548e34ba9e9f52b974424f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  p1button: {fileID: 0}
+  p2button: {fileID: 0}
   jellyTime: 3
   jellyFactor: 100
-  p1Ready: 0
-  p2Ready: 0
---- !u!114 &118217645
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 118217641}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95e109587a647964cbff23c21cd44e96, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  p1JellyButton: {fileID: 585509175}
-  p1SpeedButton: {fileID: 1792661935}
-  p2JellyButton: {fileID: 1278847396}
-  p2SpeedButton: {fileID: 1704578703}
-  PowerupController: {fileID: 118217641}
 --- !u!1001 &136130166
 Prefab:
   m_ObjectHideFlags: 0
