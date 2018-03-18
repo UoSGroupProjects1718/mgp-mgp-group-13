@@ -7,11 +7,10 @@ public class TwoPlayerController : MonoBehaviour {
 
     public GameObject P1Line, P2Line; // references to each players line objects
     public float P1_yMin, P1_yMax, speed; // set in unity, tweakable limits for movement of lines.
-    public bool lineDown, lineMoving, inputClicked; // used internally to animate lines.
+    public bool lineDown = true, lineMoving, inputClicked; // used internally to animate lines.
     public static int P1Score, P2Score;
-    public static float fishBonusSpeedP1, fishBonusSpeedP2; 
-
-
+    public static float fishBonusSpeedP1, fishBonusSpeedP2;
+    
     public Text scoreP1;
     public Text scoreP2;
 
@@ -23,7 +22,7 @@ public class TwoPlayerController : MonoBehaviour {
         fishBonusSpeedP1 = 1;
         fishBonusSpeedP2 = 1;
 
-        lineDown = false; // makes sure that the line is in its starting position
+        lineDown = true; // makes sure that the line is in its starting position
         lineMoving = false;
         scoreP1.text = P1Score.ToString();
         scoreP2.text = P2Score.ToString();
@@ -60,6 +59,11 @@ public class TwoPlayerController : MonoBehaviour {
        
     }
 
+    public bool IsP1Active()
+    {
+        return lineDown;
+        
+    }
 
     // define functions for animating frames of line movement
     public void downFrame()
