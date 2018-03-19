@@ -14,6 +14,11 @@ public class TwoPlayerController : MonoBehaviour {
     public Text scoreP1;
     public Text scoreP2;
 
+    public Button P1Button;
+    public Button P2Button;
+
+    public bool P1ButtonDown, P2ButtonDown;
+
     // Use this for initialization
     void Start()
     {
@@ -26,25 +31,15 @@ public class TwoPlayerController : MonoBehaviour {
         lineMoving = false;
         scoreP1.text = P1Score.ToString();
         scoreP2.text = P2Score.ToString();
+
+        Button P1Input = P1Button.GetComponent<Button>();
+        Button P2Input = P2Button.GetComponent<Button>();
     }
 
     // Update is called once per frame
     void LateUpdate()
-    {
-;
-        if ((Input.GetButton("Fire1") || Input.touchCount >0) && lineMoving == false && lineDown == false) // the player taps, the line isn't already moving and its current position is up
-        {
-            lineMoving = true;  // set the line as moving
-            downFrame();        // animate a frame of downward movement
-        }
-
-        if ((Input.GetButton("Fire1") || Input.touchCount > 0) && lineMoving == false && lineDown == true) // the player taps, the line isn't already moving and its current position is down
-        {
-            lineMoving = true;  //set the line as moving
-            upFrame();          // animate a frame of upward movement
-        }
-
-
+    {   
+        
         if (lineMoving == (true) && lineDown == false)  // if the line is already moving and its last complete position was up
         {
             downFrame();                                // animate a down frame
@@ -116,5 +111,36 @@ public class TwoPlayerController : MonoBehaviour {
         //print("Player2: " + P2Score.ToString());
     }
 
+    public void ButtonPressed(Button PushedButton)
+    {
+        if(PushedButton.name == "P1Input")
+        {
+            P1Go();
+        }
+        else if(PushedButton.name == "P2Input")
+        {
+            P2Go();
+        }
+    }
 
+    public void P2Go()
+    {
+        if (lineMoving == false && lineDown == false) // the player taps, the line isn't already moving and its current position is up
+        {
+            lineMoving = true;  // set the line as moving
+            downFrame();  // animate a frame of downward movement
+        }
+          
+    }
+
+    public void P1Go()
+    {
+        if (lineMoving == false && lineDown == true) // the player taps, the line isn't already moving and its current position is down
+        {
+            lineMoving = true;  //set the line as moving
+            upFrame();          // animate a frame of upward movement
+        }
+    }
+
+        
 }
