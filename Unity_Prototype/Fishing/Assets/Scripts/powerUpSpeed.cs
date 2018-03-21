@@ -72,9 +72,11 @@ public class powerUpSpeed : MonoBehaviour {
     void Update()
     {
         if (p1Ready) p1button.interactable = true;
+        else p1button.interactable = false;
 
 
         if (p2Ready) p2button.interactable = true;
-  
+        else p2button.interactable = false;
+
     }
 }

@@ -77,6 +77,14 @@ public class TwoPlayerController : MonoBehaviour {
         P2tallyList.Add(P2tally4);
         P2tallyList.Add(P2tally5);
         P2tallyList.Add(P2tally6);
+
+        foreach (Image tally in P1tallyList) {
+            tally.sprite = ui_tally_00;
+        }
+
+        foreach (Image tally in P2tallyList) {
+            tally.sprite = ui_tally_00;
+        }
     }
 
     private void Update() 
