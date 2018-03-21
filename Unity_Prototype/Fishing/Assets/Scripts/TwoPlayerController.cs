@@ -10,9 +10,11 @@ public class TwoPlayerController : MonoBehaviour {
     public bool lineDown = true, lineMoving, inputClicked; // used internally to animate lines.
     public static int P1Score, P2Score;
     public static float fishBonusSpeedP1, fishBonusSpeedP2;
-    
-    public Text scoreP1;
-    public Text scoreP2;
+
+    private bool p1gLate, p2gLate;
+      
+    //public Text scoreP1;
+    //public Text scoreP2;
 
     public Button P1Button;
     public Button P2Button;
@@ -56,8 +58,8 @@ public class TwoPlayerController : MonoBehaviour {
 
         lineDown = true; // makes sure that the line is in its starting position
         lineMoving = false;
-        scoreP1.text = P1Score.ToString();
-        scoreP2.text = P2Score.ToString();
+        //scoreP1.text = P1Score.ToString();
+        //scoreP2.text = P2Score.ToString();
 
         Button P1Input = P1Button.GetComponent<Button>();
         Button P2Input = P2Button.GetComponent<Button>();
@@ -93,6 +95,9 @@ public class TwoPlayerController : MonoBehaviour {
             
         }
 
+        if (p1gLate) { P1Go(); p1gLate = false; }
+        if (p2gLate) { P2Go(); p2gLate = false; }
+
         //print("Player 1: " + P1ButtonDown.ToString());
         //print("Player 2: " + P2ButtonDown.ToString());
 
@@ -116,8 +121,8 @@ public class TwoPlayerController : MonoBehaviour {
         {
             lineDown = true;
             lineMoving = false;
-            P1ButtonDown = false;
-            P2ButtonDown = false;
+            //P1ButtonDown = false;
+            //P2ButtonDown = false;
         }
 
     }
@@ -133,8 +138,8 @@ public class TwoPlayerController : MonoBehaviour {
         {
             lineDown = false;
             lineMoving = false;
-            P1ButtonDown = false;
-            P2ButtonDown = false;
+            //P1ButtonDown = false;
+            //P2ButtonDown = false;
         }
     }
 
@@ -145,14 +150,14 @@ public class TwoPlayerController : MonoBehaviour {
         if (PlayerRef == 1)
         {
             P1Score += scoreValue;
-            scoreP1.text = P1Score.ToString();
+            //scoreP1.text = P1Score.ToString();
             CalculateScore(P1Score, 1);
 
         }
         if (PlayerRef == 2)
         {
             P2Score += scoreValue;
-            scoreP2.text = P2Score.ToString();
+            //scoreP2.text = P2Score.ToString();
             CalculateScore(P2Score, 2);
         }
 
@@ -165,13 +170,28 @@ public class TwoPlayerController : MonoBehaviour {
         if (PushedButton.name == "P1Input")
         {
             P1ButtonDown = true;
-            P1Go();
+            p1gLate = true;
+            StartCoroutine(timerToReset());
         }
         else if (PushedButton.name == "P2Input")
         {
             P2ButtonDown = true;
-            P2Go();
+            p2gLate = true;
+
+            StartCoroutine(timerToReset());
         }
+    }
+
+    //coroutine for powerup time
+    public IEnumerator timerToReset() {
+        yield return new WaitForSeconds(0.3f);
+        resetButtons();
+    }
+
+    void resetButtons() 
+    {
+        P1ButtonDown = false;
+        P2ButtonDown = false;
     }
 
     public void P2Go()
