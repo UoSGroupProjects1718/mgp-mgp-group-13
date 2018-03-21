@@ -79,6 +79,11 @@ public class TwoPlayerController : MonoBehaviour {
         P2tallyList.Add(P2tally6);
     }
 
+    private void Update() 
+    {
+        if (Input.GetKey(KeyCode.LeftControl)) ButtonPressed(P1Button);
+        if (Input.GetKey(KeyCode.RightControl)) ButtonPressed(P2Button);
+    }
     // Update is called once per frame
     void LateUpdate()
     {   
@@ -184,7 +189,7 @@ public class TwoPlayerController : MonoBehaviour {
 
     //coroutine for powerup time
     public IEnumerator timerToReset() {
-        yield return new WaitForSeconds(0.3f);
+        yield return new WaitForSeconds(0.1f);
         resetButtons();
     }
 
