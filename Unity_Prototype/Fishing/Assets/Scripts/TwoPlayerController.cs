@@ -17,7 +17,34 @@ public class TwoPlayerController : MonoBehaviour {
     public Button P1Button;
     public Button P2Button;
 
+    [Header("P1 Tally")]
+    public Image P1tally1;
+    public Image P1tally2;
+    public Image P1tally3;
+    public Image P1tally4;
+    public Image P1tally5;
+    public Image P1tally6;
+
+    [Header("P2 Tally")]
+    public Image P2tally1;
+    public Image P2tally2;
+    public Image P2tally3;
+    public Image P2tally4;
+    public Image P2tally5;
+    public Image P2tally6;
+
+    public List<Image> P1tallyList = new List<Image>();
+    public List<Image> P2tallyList = new List<Image>();
+
+    public Sprite ui_tally_00;
+    public Sprite ui_tally_01;
+    public Sprite ui_tally_02;
+    public Sprite ui_tally_03;
+    public Sprite ui_tally_04;
+    public Sprite ui_tally_05;
+
     public bool P1ButtonDown, P2ButtonDown;
+    
 
     // Use this for initialization
     void Start()
@@ -34,6 +61,20 @@ public class TwoPlayerController : MonoBehaviour {
 
         Button P1Input = P1Button.GetComponent<Button>();
         Button P2Input = P2Button.GetComponent<Button>();
+
+        P1tallyList.Add(P1tally1);
+        P1tallyList.Add(P1tally2);
+        P1tallyList.Add(P1tally3);
+        P1tallyList.Add(P1tally4);
+        P1tallyList.Add(P1tally5);
+        P1tallyList.Add(P1tally6);
+
+        P2tallyList.Add(P2tally1);
+        P2tallyList.Add(P2tally2);
+        P2tallyList.Add(P2tally3);
+        P2tallyList.Add(P2tally4);
+        P2tallyList.Add(P2tally5);
+        P2tallyList.Add(P2tally6);
     }
 
     // Update is called once per frame
@@ -51,7 +92,10 @@ public class TwoPlayerController : MonoBehaviour {
             upFrame();                                  // animate an up frame
             
         }
-       
+
+        //print("Player 1: " + P1ButtonDown.ToString());
+        //print("Player 2: " + P2ButtonDown.ToString());
+
     }
 
     public bool IsP1Active()
@@ -72,6 +116,8 @@ public class TwoPlayerController : MonoBehaviour {
         {
             lineDown = true;
             lineMoving = false;
+            P1ButtonDown = false;
+            P2ButtonDown = false;
         }
 
     }
@@ -87,8 +133,9 @@ public class TwoPlayerController : MonoBehaviour {
         {
             lineDown = false;
             lineMoving = false;
+            P1ButtonDown = false;
+            P2ButtonDown = false;
         }
-
     }
 
     public void addScore(int PlayerRef, int scoreValue)
@@ -98,13 +145,15 @@ public class TwoPlayerController : MonoBehaviour {
         if (PlayerRef == 1)
         {
             P1Score += scoreValue;
-            scoreP1.text = P1Score.ToString();            
+            scoreP1.text = P1Score.ToString();
+            CalculateScore(P1Score, 1);
 
         }
         if (PlayerRef == 2)
         {
             P2Score += scoreValue;
             scoreP2.text = P2Score.ToString();
+            CalculateScore(P2Score, 2);
         }
 
         //print("Player1: " + P1Score.ToString());
@@ -113,12 +162,14 @@ public class TwoPlayerController : MonoBehaviour {
 
     public void ButtonPressed(Button PushedButton)
     {
-        if(PushedButton.name == "P1Input")
+        if (PushedButton.name == "P1Input")
         {
+            P1ButtonDown = true;
             P1Go();
         }
-        else if(PushedButton.name == "P2Input")
+        else if (PushedButton.name == "P2Input")
         {
+            P2ButtonDown = true;
             P2Go();
         }
     }
@@ -142,5 +193,67 @@ public class TwoPlayerController : MonoBehaviour {
         }
     }
 
-        
+    public void CalculateScore(int score, int playerRef)
+    {
+        //calculate the division and modulo of the score
+        int div = score / 5;
+        print("DIV: ===" + div.ToString());
+        int mod = score % 5;
+        print("MOD: ===" + mod.ToString());
+
+        if (playerRef == 1)
+        {
+            //assign all "tally sprites" to be blank/ a checkmark for now
+            foreach (Image tally in P1tallyList)
+            {
+                tally.sprite = ui_tally_00;
+            }
+
+            //using the division, calculate and switch the number of sprites that need to be the full 5 bar tally sprite
+            for (int i = 0; i < div; i++)
+            {
+                P1tallyList[i].sprite = ui_tally_05;
+            }
+            //change the first sprite after the last full tally to show the modulus
+            for (int i = 0; i < 6; i++)
+            {
+                if (P1tallyList[i].sprite != ui_tally_05)
+                {
+                    if (mod == 0) P1tallyList[i].sprite = ui_tally_00;
+                    if (mod == 1) P1tallyList[i].sprite = ui_tally_01;
+                    if (mod == 2) P1tallyList[i].sprite = ui_tally_02;
+                    if (mod == 3) P1tallyList[i].sprite = ui_tally_03;
+                    if (mod == 4) P1tallyList[i].sprite = ui_tally_04;
+                    break;
+                }
+
+            }
+        }
+        //same again for the other player
+        else
+        {
+            foreach (Image tally in P2tallyList)
+            {
+                tally.sprite = ui_tally_00;
+            }
+
+            for (int i = 0; i < div; i++)
+            {
+                P2tallyList[i].sprite = ui_tally_05;
+            }
+            for (int i = 0; i < 6; i++)
+            {
+                if (P2tallyList[i].sprite != ui_tally_05)
+                {
+                    if (mod == 0) P2tallyList[i].sprite = ui_tally_00;
+                    if (mod == 1) P2tallyList[i].sprite = ui_tally_01;
+                    if (mod == 2) P2tallyList[i].sprite = ui_tally_02;
+                    if (mod == 3) P2tallyList[i].sprite = ui_tally_03;
+                    if (mod == 4) P2tallyList[i].sprite = ui_tally_04;
+                    break;
+                }
+
+            }
+        }
+    }
 }
