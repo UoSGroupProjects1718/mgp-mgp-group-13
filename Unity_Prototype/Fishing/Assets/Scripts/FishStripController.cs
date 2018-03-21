@@ -27,6 +27,11 @@ public class FishStripController : MonoBehaviour {
     public int playerRef;
     public int Direction;
 
+    private GameObject readyFish;
+
+    private FishController rfishcont;
+    public TwoPlayerController PlayerController;
+    
     public int bigFish;
     public int medFish;
     public int smlFish;
@@ -112,9 +117,20 @@ public class FishStripController : MonoBehaviour {
         }
     }
 
-    
+    private void OnTriggerEnter2D(Collider2D other) {
+        print("Fish Collide");
+        readyFish = other.gameObject;
+        rfishcont = readyFish.GetComponent<FishController>();
 
-      void SpawnFishRandomly(int rngesus, int bigspawn, int medspawn, int smlspawn, int jellypowerspawn, int speedpowerspawn, int jellyspawn)
+
+    }
+
+    private void OnTriggerExit2D(Collider2D fish) {
+        print("Fish left collision");
+        readyFish = null;
+    }
+
+    void SpawnFishRandomly(int rngesus, int bigspawn, int medspawn, int smlspawn, int jellypowerspawn, int speedpowerspawn, int jellyspawn)
     {
 
         if (0 < rngesus && rngesus <= bigspawn) spawnFish(0);
@@ -171,13 +187,31 @@ public class FishStripController : MonoBehaviour {
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D other)
-        // when a fish hits the despawner, set it as inactive
-    {
-        if (other.gameObject.CompareTag("fish")) // bug catcher, just to make sure it can't set random other game objects inactive
+
+    public void CatchFish() 
         {
-            other.gameObject.SetActive(false);
+        print("Called catchFish Function");
+        if (readyFish != null && PlayerController.lineMoving == false) {
+
+            if (rfishcont.Info.Name == "JellyFish") {
+                PlayerController.addScore(rfishcont.PlayerID, rfishcont.Info.ScoreValue);
+                PlayerController.lineMoving = true;
+            } else if (rfishcont.Info.Name == "jellyPickup") {
+                if (rfishcont.PlayerID == 1) powerUpJelly.p1Ready = true;
+                else powerUpJelly.p2Ready = true;
+
+            } else if (rfishcont.Info.Name == "speedPickup") {
+                if (rfishcont.PlayerID == 1) powerUpSpeed.p1Ready = true;
+                else powerUpSpeed.p2Ready = true;
+
+                PlayerController.addScore(rfishcont.PlayerID, rfishcont.Info.ScoreValue);
+
+            } else {
+               
+                PlayerController.addScore(rfishcont.PlayerID, rfishcont.Info.ScoreValue);
+
+            }
+            gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
         }
     }
-        
 }

@@ -20,11 +20,27 @@ GameObject:
   m_Component:
   - component: {fileID: 4907955574489790}
   - component: {fileID: 50935932680959276}
-  - component: {fileID: 61863464346763832}
   - component: {fileID: 114709670607682608}
   m_Layer: 0
   m_Name: Fish Strip
   m_TagString: UIStrip
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1658921226883502
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 4327561026991696}
+  - component: {fileID: 61025539786951546}
+  - component: {fileID: 114379702479649420}
+  m_Layer: 0
+  m_Name: Despawner
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,6 +60,19 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
+--- !u!4 &4327561026991696
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658921226883502}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4907955574489790}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4573799136752066
 Transform:
   m_ObjectHideFlags: 1
@@ -68,6 +97,7 @@ Transform:
   m_LocalScale: {x: 1.45, y: 1.65, z: 1}
   m_Children:
   - {fileID: 4573799136752066}
+  - {fileID: 4327561026991696}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -91,12 +121,12 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61863464346763832
+--- !u!61 &61025539786951546
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1201121766318222}
+  m_GameObject: {fileID: 1658921226883502}
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
@@ -116,6 +146,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 6.69}
   m_EdgeRadius: 0
+--- !u!114 &114379702479649420
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1658921226883502}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3b1ebe13e12c3be44a1fbf88b83a6f97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114709670607682608
 MonoBehaviour:
   m_ObjectHideFlags: 1

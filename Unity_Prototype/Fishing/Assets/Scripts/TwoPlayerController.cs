@@ -10,7 +10,7 @@ public class TwoPlayerController : MonoBehaviour {
     public bool lineDown = true, lineMoving, inputClicked; // used internally to animate lines.
     public static int P1Score, P2Score;
     public static float fishBonusSpeedP1, fishBonusSpeedP2;
-    
+
     public Text scoreP1;
     public Text scoreP2;
 
@@ -166,6 +166,7 @@ public class TwoPlayerController : MonoBehaviour {
         {
             P1ButtonDown = true;
             P1Go();
+            
         }
         else if (PushedButton.name == "P2Input")
         {
