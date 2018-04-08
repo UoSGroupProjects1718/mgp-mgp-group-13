@@ -1,0 +1,6 @@
+BUGS IN BUILD 0.0.5
+
+- UI timer carried through to the win screen.
+- When activating a jellyfish power up, a constant stream of jellies occurs for the opponent. This appears to carry through to any rematches until the app is closed.
+- The speed power up appears to double the amount of jellyfish that occur during the jellyfish bug, but only until the end of a round.
+- The game screen turns black when you tab out of the app to use another one.
