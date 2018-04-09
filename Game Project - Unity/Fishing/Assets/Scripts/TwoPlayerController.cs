@@ -164,6 +164,8 @@ public class TwoPlayerController : MonoBehaviour {
         {
             P1Score += scoreValue;
             //scoreP1.text = P1Score.ToString();
+            if(P1Score < 0) P1Score = 0;
+            else if (P1Score > 30) P1Score = 30;
             CalculateScore(P1Score, 1);
 
         }
@@ -171,6 +173,8 @@ public class TwoPlayerController : MonoBehaviour {
         {
             P2Score += scoreValue;
             //scoreP2.text = P2Score.ToString();
+            if (P2Score < 0) P2Score = 0;
+            else if (P2Score > 30) P2Score = 30;
             CalculateScore(P2Score, 2);
         }
 
