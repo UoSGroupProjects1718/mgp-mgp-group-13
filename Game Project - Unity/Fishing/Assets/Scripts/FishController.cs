@@ -14,6 +14,9 @@ public class FishController : MonoBehaviour {
     private GameObject controller;
     private TwoPlayerController PlayerCont;
 
+    private GameObject buttonControl;
+    private powerupButtonController buttonController;
+
 
   
     private bool touching;
@@ -32,8 +35,10 @@ public class FishController : MonoBehaviour {
 	void Start () {
         SprRen = GetComponent<SpriteRenderer>();
 
-        controller = GameObject.Find("PlayerController");
+        controller = GameObject.Find("PlayerController");        
         PlayerCont = controller.GetComponent<TwoPlayerController>();
+        buttonControl = GameObject.Find("PowerUpsController");
+        buttonController = buttonControl.GetComponent<powerupButtonController>();
     }
 	
 	// Update is called once per frame
@@ -101,17 +106,31 @@ public class FishController : MonoBehaviour {
 
         if (fish.Name == "jellyPickup")
         {
-            if (PlayerID == 1) powerUpJelly.p1Ready = true;
-            else powerUpJelly.p2Ready = true;
-
+            if (PlayerID == 1)
+            {
+                powerUpJelly.p1Ready = true;
+                buttonController.p1Jelly.interactable = true;
+            }
+            else
+            {
+                powerUpJelly.p2Ready = true;
+                buttonController.p2Jelly.interactable = true;
+            }
             touching = false;
         }
 
         if (fish.Name == "speedPickup")
         {
-            if (PlayerID == 1) powerUpSpeed.p1Ready = true;
-            else powerUpSpeed.p2Ready = true;
-
+            if (PlayerID == 1)
+            {
+                powerUpSpeed.p1Ready = true;
+                buttonController.p1Speed.interactable = true;
+            }
+            else
+            {
+                powerUpSpeed.p2Ready = true;
+                buttonController.p2Speed.interactable = true;
+            }
             PlayerCont.addScore(PlayerID, fish.ScoreValue);
             touching = false;
         }
