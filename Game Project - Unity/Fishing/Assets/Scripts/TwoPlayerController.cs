@@ -46,7 +46,10 @@ public class TwoPlayerController : MonoBehaviour {
     public Sprite ui_tally_05;
 
     public bool P1ButtonDown, P2ButtonDown;
-    
+
+    private GameObject buttonControl;
+    private powerupButtonController buttonController;
+
 
     // Use this for initialization
     void Start()
@@ -85,12 +88,21 @@ public class TwoPlayerController : MonoBehaviour {
         foreach (Image tally in P2tallyList) {
             tally.sprite = ui_tally_00;
         }
+
+        buttonControl = GameObject.Find("PowerUpsController");
+        buttonController = buttonControl.GetComponent<powerupButtonController>();
     }
 
     private void Update() 
     {
         if (Input.GetKey(KeyCode.LeftControl)) ButtonPressed(P1Button);
         if (Input.GetKey(KeyCode.RightControl)) ButtonPressed(P2Button);
+
+        if (Input.GetKey(KeyCode.Q)) buttonController.p1Jelly.interactable = true;
+        if (Input.GetKey(KeyCode.W)) buttonController.p1Speed.interactable = true;
+        if (Input.GetKey(KeyCode.O)) buttonController.p2Jelly.interactable = true;
+        if (Input.GetKey(KeyCode.P)) buttonController.p2Speed.interactable = true;
+
     }
     // Update is called once per frame
     void LateUpdate()
