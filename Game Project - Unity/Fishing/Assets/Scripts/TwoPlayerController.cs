@@ -35,6 +35,7 @@ public class TwoPlayerController : MonoBehaviour {
     private GameObject buttonControl;
     private powerupButtonController buttonController;
 
+    //used for changing animations on the otters
     public GameObject fisher1;
     public GameObject fisher2;
 
@@ -293,14 +294,14 @@ public class TwoPlayerController : MonoBehaviour {
         }
     }
 
-    public void ZapFeedback(int playerRef)   //feedback for jellyfish zap
+    public void ZapFeedback(int playerRef)   //feedback for jellyfish zap. it didn't want me to call the coroutine from the fishcontroller script
     {
         StartCoroutine(ZapDuration(playerRef));
     }
 
-    public IEnumerator ZapDuration(int playerRef)
+    public IEnumerator ZapDuration(int playerRef)       //coroutine for zap feedback
     {
-        if (playerRef == 1)
+        if (playerRef == 1)         //set relevant player to zap animation
         {
             fisher1.GetComponent<Animator>().SetBool("Zapped", true);
         }
@@ -311,7 +312,7 @@ public class TwoPlayerController : MonoBehaviour {
 
         yield return new WaitForSeconds(0.5f);
 
-        if (playerRef == 1)
+        if (playerRef == 1)         //set back to idle
         {
             fisher1.GetComponent<Animator>().SetBool("Zapped", false);
         }
