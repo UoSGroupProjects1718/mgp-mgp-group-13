@@ -23,9 +23,10 @@ public class FishController : MonoBehaviour {
 
     public void SetupFish(int dir, Fish info, int PlayerRef)
     {
+        //assign variables for the fish
         SprRen = GetComponent<SpriteRenderer>();
-        Info = info;
-        direction = dir;
+        Info = info; //information from the fish prefab (score)
+        direction = dir; 
         SprRen.sprite = Info.FishSprite;
         PlayerID = PlayerRef;
 
@@ -35,6 +36,7 @@ public class FishController : MonoBehaviour {
 	void Start () {
         SprRen = GetComponent<SpriteRenderer>();
 
+        //get other game objects and their components for reference
         controller = GameObject.Find("PlayerController");        
         PlayerCont = controller.GetComponent<TwoPlayerController>();
         buttonControl = GameObject.Find("PowerUpsController");
@@ -44,14 +46,14 @@ public class FishController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (PlayerID == 1)
+        if (PlayerID == 1) //if the fish belongs to player one, transform along the bottom strip (left to right)
         {
             Vector3 tickMove = new Vector3((speed * direction * Time.deltaTime * TwoPlayerController.fishBonusSpeedP1), 0.0f, 0.0f); // added fishBonusSpeed and removed magic number '1' AM
             transform.position += tickMove;
 
         }
 
-        if (PlayerID == 2)
+        if (PlayerID == 2) //if the fish belongs to player one, transform along the top strip (right to left)
         {
             Vector3 tickMove = new Vector3((speed * direction * Time.deltaTime * TwoPlayerController.fishBonusSpeedP2), 0.0f, 0.0f); // added fishBonusSpeed and removed magic number '1' AM
             transform.position += tickMove;
@@ -72,16 +74,6 @@ public class FishController : MonoBehaviour {
         
     }
 
-    private void OnEnable()
-    {
-        
-    }
-
-    private void OnDisable()
-    {
-        
-    }
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
         touching = true;
@@ -92,14 +84,15 @@ public class FishController : MonoBehaviour {
         touching = false;
     }
 
-    void CatchFish(Fish fish)
+    void CatchFish(Fish fish) //when fish collide with the line check if it's a special fish
     {
         if (PlayerCont.lineMoving == false)
         {
-            if (fish.Name == "JellyFish")
+            if (fish.Name == "JellyFish") //if the fish is a jellyfish, add a negative score and 
             {
                 PlayerCont.addScore(PlayerID, fish.ScoreValue);
                 PlayerCont.lineMoving = true;
+
                 touching = false;
             }
         }

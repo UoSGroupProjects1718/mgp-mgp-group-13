@@ -52,12 +52,16 @@ public class powerUpSpeed : MonoBehaviour {
     void SpeedPowerStop(int player)
     {
         if (player == 1)
-        TwoPlayerController.fishBonusSpeedP1 = 1;
-        P1spawnRatio = 1;
+        {
+            TwoPlayerController.fishBonusSpeedP1 = 1;
+            P1spawnRatio = 1;
+        }
 
-        if (player ==2)
-        TwoPlayerController.fishBonusSpeedP2 = 1;
-        P2spawnRatio = 1;
+        if (player == 2)
+        {
+            TwoPlayerController.fishBonusSpeedP2 = 1;
+            P2spawnRatio = 1;
+        }
     }
 
     // Use this for initialization

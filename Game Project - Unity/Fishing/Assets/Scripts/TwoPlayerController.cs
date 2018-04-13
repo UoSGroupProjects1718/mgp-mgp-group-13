@@ -9,41 +9,26 @@ public class TwoPlayerController : MonoBehaviour {
     public float P1_yMin, P1_yMax, speed; // set in unity, tweakable limits for movement of lines.
     public bool lineDown = true, lineMoving, inputClicked; // used internally to animate lines.
     public static int P1Score, P2Score;
-    public static float fishBonusSpeedP1, fishBonusSpeedP2;
+    public static float fishBonusSpeedP1, fishBonusSpeedP2; //change the speed of the fish when speed powerup is active
 
     private bool p1gLate, p2gLate;
-      
-    //public Text scoreP1;
-    //public Text scoreP2;
 
     public Button P1Button;
     public Button P2Button;
 
+    //reference image objects for the tally UI for both players
     [Header("P1 Tally")]
-    public Image P1tally1;
-    public Image P1tally2;
-    public Image P1tally3;
-    public Image P1tally4;
-    public Image P1tally5;
-    public Image P1tally6;
+    public Image P1tally1, P1tally2, P1tally3, P1tally4, P1tally5, P1tally6;
 
     [Header("P2 Tally")]
-    public Image P2tally1;
-    public Image P2tally2;
-    public Image P2tally3;
-    public Image P2tally4;
-    public Image P2tally5;
-    public Image P2tally6;
+    public Image P2tally1, P2tally2, P2tally3, P2tally4, P2tally5, P2tally6;
 
+    //create lists to store tally sprites in
     public List<Image> P1tallyList = new List<Image>();
     public List<Image> P2tallyList = new List<Image>();
 
-    public Sprite ui_tally_00;
-    public Sprite ui_tally_01;
-    public Sprite ui_tally_02;
-    public Sprite ui_tally_03;
-    public Sprite ui_tally_04;
-    public Sprite ui_tally_05;
+    //reference tally sprites
+    public Sprite ui_tally_00, ui_tally_01, ui_tally_02, ui_tally_03, ui_tally_04, ui_tally_05;
 
     public bool P1ButtonDown, P2ButtonDown;
 
@@ -54,6 +39,7 @@ public class TwoPlayerController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        //initialise variables for both players
         P1Score = 0; 
         P2Score = 0;
         fishBonusSpeedP1 = 1;
@@ -95,9 +81,12 @@ public class TwoPlayerController : MonoBehaviour {
 
     private void Update() 
     {
+        //test buttons for windows build / unity editor testing
+        //player inputs on control keys
         if (Input.GetKey(KeyCode.LeftControl)) ButtonPressed(P1Button);
         if (Input.GetKey(KeyCode.RightControl)) ButtonPressed(P2Button);
 
+        //turn on powerups for each player
         if (Input.GetKey(KeyCode.Q)) buttonController.p1Jelly.interactable = true;
         if (Input.GetKey(KeyCode.W)) buttonController.p1Speed.interactable = true;
         if (Input.GetKey(KeyCode.O)) buttonController.p2Jelly.interactable = true;
@@ -123,9 +112,6 @@ public class TwoPlayerController : MonoBehaviour {
         if (p1gLate) { P1Go(); p1gLate = false; }
         if (p2gLate) { P2Go(); p2gLate = false; }
 
-        //print("Player 1: " + P1ButtonDown.ToString());
-        //print("Player 2: " + P2ButtonDown.ToString());
-
     }
 
     public bool IsP1Active()
@@ -146,8 +132,6 @@ public class TwoPlayerController : MonoBehaviour {
         {
             lineDown = true;
             lineMoving = false;
-            //P1ButtonDown = false;
-            //P2ButtonDown = false;
         }
 
     }
@@ -170,8 +154,6 @@ public class TwoPlayerController : MonoBehaviour {
 
     public void addScore(int PlayerRef, int scoreValue)
     {
-        fishBonusSpeedP1 = 1; // whenever a fish is caught it should also end any bonus powerups
-        fishBonusSpeedP2 = 1;
         if (PlayerRef == 1)
         {
             P1Score += scoreValue;
@@ -246,9 +228,8 @@ public class TwoPlayerController : MonoBehaviour {
     {
         //calculate the division and modulo of the score
         int div = score / 5;
-        print("DIV: ===" + div.ToString());
         int mod = score % 5;
-        print("MOD: ===" + mod.ToString());
+
 
         if (playerRef == 1)
         {
