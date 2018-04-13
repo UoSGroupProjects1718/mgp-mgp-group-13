@@ -55,10 +55,6 @@ public class powerUpJelly : MonoBehaviour
 
     void Update()
     {
-        if (p1Ready) p1button.interactable = true;
-        
 
-        if (p2Ready) p2button.interactable = true;
-        //else p2button.interactable = false;
-   }
+    }
 }

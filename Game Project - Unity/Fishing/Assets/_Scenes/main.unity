@@ -500,8 +500,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4cba83be214e11943ae1fcef463243af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1button: {fileID: 0}
-  p2button: {fileID: 0}
+  p1button: {fileID: 1792661937}
+  p2button: {fileID: 1704578705}
   speedTime: 3
   speedRatio: 2
 --- !u!4 &118217643
@@ -528,8 +528,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0ee8174e32548e34ba9e9f52b974424f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1button: {fileID: 0}
-  p2button: {fileID: 0}
+  p1button: {fileID: 585509177}
+  p2button: {fileID: 1278847398}
   jellyTime: 3
   jellyFactor: 100
 --- !u!1001 &136130166
