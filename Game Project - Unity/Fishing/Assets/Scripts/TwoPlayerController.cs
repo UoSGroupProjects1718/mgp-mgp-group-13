@@ -47,12 +47,11 @@ public class TwoPlayerController : MonoBehaviour {
 
         lineDown = true; // makes sure that the line is in its starting position
         lineMoving = false;
-        //scoreP1.text = P1Score.ToString();
-        //scoreP2.text = P2Score.ToString();
 
         Button P1Input = P1Button.GetComponent<Button>();
         Button P2Input = P2Button.GetComponent<Button>();
 
+        //on start, add the tally objects into each plauyers list
         P1tallyList.Add(P1tally1);
         P1tallyList.Add(P1tally2);
         P1tallyList.Add(P1tally3);
@@ -67,6 +66,7 @@ public class TwoPlayerController : MonoBehaviour {
         P2tallyList.Add(P2tally5);
         P2tallyList.Add(P2tally6);
 
+        //at the start - for each of the players tally, set of the objects to have a blank sprite
         foreach (Image tally in P1tallyList) {
             tally.sprite = ui_tally_00;
         }
@@ -75,6 +75,7 @@ public class TwoPlayerController : MonoBehaviour {
             tally.sprite = ui_tally_00;
         }
 
+        //reference the buttons from the PowerUpsController so they can be changed as needed.
         buttonControl = GameObject.Find("PowerUpsController");
         buttonController = buttonControl.GetComponent<powerupButtonController>();
     }
@@ -178,6 +179,8 @@ public class TwoPlayerController : MonoBehaviour {
 
     public void ButtonPressed(Button PushedButton)
     {
+        //check what player pressed their button and transistion of the lines as appropriate
+        //^ functions named P1Go and P2Go below
         if (PushedButton.name == "P1Input")
         {
             P1ButtonDown = true;
@@ -193,7 +196,7 @@ public class TwoPlayerController : MonoBehaviour {
         }
     }
 
-    //coroutine for powerup time
+    //after a tiny delay, reset the player buttons to stop spam
     public IEnumerator timerToReset() {
         yield return new WaitForSeconds(0.1f);
         resetButtons();

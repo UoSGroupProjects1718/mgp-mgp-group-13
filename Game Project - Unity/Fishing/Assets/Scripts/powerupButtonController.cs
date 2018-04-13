@@ -13,6 +13,7 @@ public class powerupButtonController : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        // part of the PowerUpsController gameObject, on start set all power-up buttons so they can't be used
         p1Jelly.interactable = false;
         p2Jelly.interactable = false;
         p1Speed.interactable = false;

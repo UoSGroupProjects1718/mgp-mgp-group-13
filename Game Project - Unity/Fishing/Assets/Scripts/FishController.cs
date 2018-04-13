@@ -26,7 +26,7 @@ public class FishController : MonoBehaviour {
         //assign variables for the fish
         SprRen = GetComponent<SpriteRenderer>();
         Info = info; //information from the fish prefab (score)
-        direction = dir; 
+        direction = dir; //-1 or 1 (to travel left/right) - based on player 
         SprRen.sprite = Info.FishSprite;
         PlayerID = PlayerRef;
 
@@ -69,11 +69,13 @@ public class FishController : MonoBehaviour {
         
     }
 
+    //if fish collides with the rod, set the boolean to say it's in contact to true - to work for checking fish catching
     public void OnTriggerEnter2D(Collider2D collision)
     {
         touching = true;
     }
 
+    //if fish leaves the rod, then set the bool to false - meaning it can't be caught anymore
     void OnTriggerExit2D(Collider2D collision)
     {
         touching = false;
@@ -81,21 +83,24 @@ public class FishController : MonoBehaviour {
 
     void CatchFish(Fish fish) //when fish collide with the line check how to handle based on fish type
     {
+        //jellyfish handler - if statement checks that the line isn't moving
         if (PlayerCont.lineMoving == false)
         {
-            if (fish.Name == "JellyFish") //if the fish is a jellyfish, add a negative score and 
+            if (fish.Name == "JellyFish") //if the fish is a jellyfish, add a negative score and retract line to the other players side.
             {
                 PlayerCont.addScore(PlayerID, fish.ScoreValue);
-                PlayerCont.lineMoving = true;
-
-                touching = false;
+                PlayerCont.lineMoving = true; //code to change and switch lines to the other players side
+                touching = false; // set the fish touching to false so that catch code isn't run constantly while fish is in the rod
             }
         }
 
+        //nested loops for the seperate catachable fish - this major if statement checks if a player taps the screen on their side whilst it is their turn.
         if ((PlayerCont.P1ButtonDown == true && PlayerCont.lineDown == true) || (PlayerCont.P2ButtonDown == true && PlayerCont.lineDown == false) && PlayerCont.lineMoving == false)
         {
+            //check if it's the jelly powerup
             if (fish.Name == "jellyPickup")
             {
+                //depending on who caught the fish, make their power-up button active
                 if (PlayerID == 1)
                 {
                     powerUpJelly.p1Ready = true;
@@ -106,10 +111,12 @@ public class FishController : MonoBehaviour {
                     powerUpJelly.p2Ready = true;
                     buttonController.p2Jelly.interactable = true;
                 }
+                //remove the fish and set it's touching to false to stop it constantly run the catch code
                 gameObject.SetActive(false);
                 touching = false;
             }
 
+            //check for the other power-up and follow the same process
             else if (fish.Name == "speedPickup")
             {
                 if (PlayerID == 1)
@@ -125,10 +132,10 @@ public class FishController : MonoBehaviour {
                 gameObject.SetActive(false);
                 touching = false;
             }
-            else //
+            else //if it's a regular scoring fish
             {
                 gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
-                PlayerCont.addScore(PlayerID, Info.ScoreValue);
+                PlayerCont.addScore(PlayerID, Info.ScoreValue); //add the score of the fish to the player who caught it
             }
             
         }
