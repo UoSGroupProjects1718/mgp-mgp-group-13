@@ -545,8 +545,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   p1button: {fileID: 585509177}
   p2button: {fileID: 1278847398}
-  jellyTime: 3
-  jellyFactor: 65
+  jellyTime: 6
+  jellyFactor: 45
 --- !u!1001 &136130166
 Prefab:
   m_ObjectHideFlags: 0
