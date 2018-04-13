@@ -634,10 +634,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 95e109587a647964cbff23c21cd44e96, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  p1Jelly: {fileID: 0}
-  p2Jelly: {fileID: 0}
-  p1Speed: {fileID: 0}
-  p2Speed: {fileID: 0}
+  p1Jelly: {fileID: 585509177}
+  p2Jelly: {fileID: 1278847398}
+  p1Speed: {fileID: 1792661937}
+  p2Speed: {fileID: 1704578705}
 --- !u!4 &154740743
 Transform:
   m_ObjectHideFlags: 0
