@@ -604,6 +604,11 @@ Prefab:
       propertyPath: m_SortingOrder
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114709670607682608, guid: dd1e8a5340102e34981f90382dd6f156,
+        type: 2}
+      propertyPath: SpawnRate
+      value: 1.6666666
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd1e8a5340102e34981f90382dd6f156, type: 2}
   m_IsPrefabParent: 0
@@ -2215,6 +2220,11 @@ Prefab:
     - target: {fileID: 1201121766318222, guid: dd1e8a5340102e34981f90382dd6f156, type: 2}
       propertyPath: m_Name
       value: P1 Fish Strip
+      objectReference: {fileID: 0}
+    - target: {fileID: 114709670607682608, guid: dd1e8a5340102e34981f90382dd6f156,
+        type: 2}
+      propertyPath: SpawnRate
+      value: 1.6666666
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd1e8a5340102e34981f90382dd6f156, type: 2}

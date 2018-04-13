@@ -140,10 +140,10 @@ MonoBehaviour:
   SpawnData:
   - Name: BigFish
     FishSprite: {fileID: 21300000, guid: 65228dff85f6cc14abbf54904f915900, type: 3}
-    ScoreValue: 5
+    ScoreValue: 4
   - Name: MediumFish
     FishSprite: {fileID: 21300000, guid: 56bbb5f63e9ce34478ec82a43c810fda, type: 3}
-    ScoreValue: 3
+    ScoreValue: 2
   - Name: SmallFish
     FishSprite: {fileID: 21300000, guid: 34f6bb02d1d1dc143971e81ed908c26d, type: 3}
     ScoreValue: 1
