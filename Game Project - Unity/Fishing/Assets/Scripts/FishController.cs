@@ -46,14 +46,14 @@ public class FishController : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        if (PlayerID == 1) //if the fish belongs to player one, transform along the bottom strip (left to right)
+        if (PlayerID == 1) //if the fish belongs to player one, transform along the bottom strip (right to left)
         {
             Vector3 tickMove = new Vector3((speed * direction * Time.deltaTime * TwoPlayerController.fishBonusSpeedP1), 0.0f, 0.0f); // added fishBonusSpeed and removed magic number '1' AM
             transform.position += tickMove;
 
         }
 
-        if (PlayerID == 2) //if the fish belongs to player one, transform along the top strip (right to left)
+        if (PlayerID == 2) //if the fish belongs to player one, transform along the top strip (left to right)
         {
             Vector3 tickMove = new Vector3((speed * direction * Time.deltaTime * TwoPlayerController.fishBonusSpeedP2), 0.0f, 0.0f); // added fishBonusSpeed and removed magic number '1' AM
             transform.position += tickMove;
@@ -64,12 +64,7 @@ public class FishController : MonoBehaviour {
 
         if (touching == true) //basic check, need to incorperate lineMoving from player controller  GetComponent<TwoPlayerController>().lineMoving == true)
         {
-            CatchFish(Info);
-            if ((PlayerCont.P1ButtonDown == true && PlayerCont.lineDown == true) || (PlayerCont.P2ButtonDown == true && PlayerCont.lineDown == false) && PlayerCont.lineMoving == false)
-            {
-                gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
-                PlayerCont.addScore(PlayerID, Info.ScoreValue);
-            }
+            CatchFish(Info); //if fish is colliding with rod, use as parameter into a function to check type of fish      
         }
         
     }
@@ -84,7 +79,7 @@ public class FishController : MonoBehaviour {
         touching = false;
     }
 
-    void CatchFish(Fish fish) //when fish collide with the line check if it's a special fish
+    void CatchFish(Fish fish) //when fish collide with the line check how to handle based on fish type
     {
         if (PlayerCont.lineMoving == false)
         {
@@ -97,35 +92,45 @@ public class FishController : MonoBehaviour {
             }
         }
 
-        if (fish.Name == "jellyPickup")
+        if ((PlayerCont.P1ButtonDown == true && PlayerCont.lineDown == true) || (PlayerCont.P2ButtonDown == true && PlayerCont.lineDown == false) && PlayerCont.lineMoving == false)
         {
-            if (PlayerID == 1)
+            if (fish.Name == "jellyPickup")
             {
-                powerUpJelly.p1Ready = true;
-                buttonController.p1Jelly.interactable = true;
+                if (PlayerID == 1)
+                {
+                    powerUpJelly.p1Ready = true;
+                    buttonController.p1Jelly.interactable = true;
+                }
+                else
+                {
+                    powerUpJelly.p2Ready = true;
+                    buttonController.p2Jelly.interactable = true;
+                }
+                gameObject.SetActive(false);
+                touching = false;
             }
-            else
-            {
-                powerUpJelly.p2Ready = true;
-                buttonController.p2Jelly.interactable = true;
-            }
-            touching = false;
-        }
 
-        if (fish.Name == "speedPickup")
-        {
-            if (PlayerID == 1)
+            else if (fish.Name == "speedPickup")
             {
-                powerUpSpeed.p1Ready = true;
-                buttonController.p1Speed.interactable = true;
+                if (PlayerID == 1)
+                {
+                    powerUpSpeed.p1Ready = true;
+                    buttonController.p1Speed.interactable = true;
+                }
+                else
+                {
+                    powerUpSpeed.p2Ready = true;
+                    buttonController.p2Speed.interactable = true;
+                }
+                gameObject.SetActive(false);
+                touching = false;
             }
-            else
+            else //
             {
-                powerUpSpeed.p2Ready = true;
-                buttonController.p2Speed.interactable = true;
+                gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
+                PlayerCont.addScore(PlayerID, Info.ScoreValue);
             }
-            PlayerCont.addScore(PlayerID, fish.ScoreValue);
-            touching = false;
+            
         }
 
     }
