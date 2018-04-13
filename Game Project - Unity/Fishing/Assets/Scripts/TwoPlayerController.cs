@@ -35,6 +35,9 @@ public class TwoPlayerController : MonoBehaviour {
     private GameObject buttonControl;
     private powerupButtonController buttonController;
 
+    public GameObject fisher1;
+    public GameObject fisher2;
+
 
     // Use this for initialization
     void Start()
@@ -287,6 +290,34 @@ public class TwoPlayerController : MonoBehaviour {
                 }
 
             }
+        }
+    }
+
+    public void ZapFeedback(int playerRef)   //feedback for jellyfish zap
+    {
+        StartCoroutine(ZapDuration(playerRef));
+    }
+
+    public IEnumerator ZapDuration(int playerRef)
+    {
+        if (playerRef == 1)
+        {
+            fisher1.GetComponent<Animator>().SetBool("Zapped", true);
+        }
+        else
+        {
+            fisher2.GetComponent<Animator>().SetBool("Zapped", true);
+        }
+
+        yield return new WaitForSeconds(0.5f);
+
+        if (playerRef == 1)
+        {
+            fisher1.GetComponent<Animator>().SetBool("Zapped", false);
+        }
+        else
+        {
+            fisher2.GetComponent<Animator>().SetBool("Zapped", false);
         }
     }
 }

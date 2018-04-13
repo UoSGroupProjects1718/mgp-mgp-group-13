@@ -91,6 +91,8 @@ public class FishController : MonoBehaviour {
                 PlayerCont.addScore(PlayerID, fish.ScoreValue);
                 PlayerCont.lineMoving = true; //code to change and switch lines to the other players side
                 touching = false; // set the fish touching to false so that catch code isn't run constantly while fish is in the rod
+
+                PlayerCont.ZapFeedback(PlayerID);  //call function in twoplayercontroller to start feedback for the relevant player        
             }
         }
 
