@@ -13,6 +13,7 @@ public class Fish
 {
     public string Name;
     public Sprite FishSprite;
+    public float blendValue;
     public int ScoreValue;
 }
 

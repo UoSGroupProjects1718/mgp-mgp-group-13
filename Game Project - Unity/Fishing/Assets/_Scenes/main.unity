@@ -530,7 +530,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &118217644
 MonoBehaviour:
@@ -2161,7 +2161,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4074906999566736, guid: 94ccedbf01c8bc840a10bf267b79642a, type: 2}
       propertyPath: m_RootOrder
-      value: 8
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 4074906999566736, guid: 94ccedbf01c8bc840a10bf267b79642a, type: 2}
       propertyPath: m_LocalScale.x
@@ -2220,11 +2220,6 @@ Prefab:
     - target: {fileID: 1201121766318222, guid: dd1e8a5340102e34981f90382dd6f156, type: 2}
       propertyPath: m_Name
       value: P1 Fish Strip
-      objectReference: {fileID: 0}
-    - target: {fileID: 114709670607682608, guid: dd1e8a5340102e34981f90382dd6f156,
-        type: 2}
-      propertyPath: SpawnRate
-      value: 1.6666666
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: dd1e8a5340102e34981f90382dd6f156, type: 2}
@@ -3137,6 +3132,11 @@ Prefab:
     - target: {fileID: 4519768015170086, guid: 6ede19665381d004db46ba05b64d7b75, type: 2}
       propertyPath: m_LocalPosition.y
       value: -0.67
+      objectReference: {fileID: 0}
+    - target: {fileID: 212233600755111812, guid: 6ede19665381d004db46ba05b64d7b75,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 6ede19665381d004db46ba05b64d7b75, type: 2}

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 
 public class FishController : MonoBehaviour {
 
@@ -17,7 +18,10 @@ public class FishController : MonoBehaviour {
     private GameObject buttonControl;
     private powerupButtonController buttonController;
 
-
+    private Animator animator;
+    private float BlendValue;
+   
+    
   
     private bool touching;
 
@@ -25,17 +29,21 @@ public class FishController : MonoBehaviour {
     {
         //assign variables for the fish
         SprRen = GetComponent<SpriteRenderer>();
+     
         Info = info; //information from the fish prefab (score)
         direction = dir; //-1 or 1 (to travel left/right) - based on player 
-        SprRen.sprite = Info.FishSprite;
+        // SprRen.sprite = Info.FishSprite;
         PlayerID = PlayerRef;
+
+        BlendValue = Info.blendValue;
 
     }
 
 	// Use this for initialization
 	void Start () {
-        SprRen = GetComponent<SpriteRenderer>();
-
+        //SprRen = GetComponent<SpriteRenderer>();
+        animator = GetComponent<Animator>();
+     
         //get other game objects and their components for reference
         controller = GameObject.Find("PlayerController");        
         PlayerCont = controller.GetComponent<TwoPlayerController>();
@@ -45,6 +53,8 @@ public class FishController : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
+
+        animator.SetFloat("Blend", BlendValue);
 
         if (PlayerID == 1) //if the fish belongs to player one, transform along the bottom strip (right to left)
         {
