@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+using UnityEditor.Android;
 
 public class FishController : MonoBehaviour {
 
@@ -9,7 +10,6 @@ public class FishController : MonoBehaviour {
     private int direction;
 
     private Fish Info;
-    private SpriteRenderer SprRen;
     public int PlayerID;
 
     private GameObject controller;
@@ -28,11 +28,9 @@ public class FishController : MonoBehaviour {
     public void SetupFish(int dir, Fish info, int PlayerRef)
     {
         //assign variables for the fish
-        SprRen = GetComponent<SpriteRenderer>();
-     
+             
         Info = info; //information from the fish prefab (score)
         direction = dir; //-1 or 1 (to travel left/right) - based on player 
-        // SprRen.sprite = Info.FishSprite;
         PlayerID = PlayerRef;
 
         BlendValue = Info.blendValue;
@@ -103,7 +101,7 @@ public class FishController : MonoBehaviour {
                 touching = false; // set the fish touching to false so that catch code isn't run constantly while fish is in the rod
 
                 PlayerCont.ZapFeedback(PlayerID);  //call function in twoplayercontroller to start feedback for the relevant player
-                Handheld.Vibrate();                 //haptic feedback
+                //Handheld.Vibrate();                 //haptic feedback  -COMMENTED OUT AS BREAKS PC BUILD (works fine for mobile builds)
             }
         }
 
