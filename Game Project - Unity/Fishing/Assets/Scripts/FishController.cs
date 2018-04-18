@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
-using UnityEditor.Android;
 
 public class FishController : MonoBehaviour {
 
