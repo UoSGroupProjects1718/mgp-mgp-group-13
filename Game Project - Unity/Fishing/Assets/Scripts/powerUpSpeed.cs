@@ -12,6 +12,8 @@ public class powerUpSpeed : MonoBehaviour {
     public static float P1spawnRatio, P2spawnRatio;
     public static bool p1Ready = false, p2Ready = false;
 
+    public GameObject p1Storm, p2Storm;
+
 
     //sets fish speed mutiplier to bonus value 
     public void SpeedPowerStartP1()
@@ -23,6 +25,7 @@ public class powerUpSpeed : MonoBehaviour {
         p1button.interactable = false;
         //P2spawnRatio = 1;
         StartCoroutine(SpeedPowerupTime(2));
+        p2Storm.SetActive(true);
 
     }
 
@@ -35,6 +38,7 @@ public class powerUpSpeed : MonoBehaviour {
         p2button.interactable = false;
         //P1spawnRatio = 1;
         StartCoroutine(SpeedPowerupTime(1));
+        p1Storm.SetActive(true);
 
     }
 
@@ -55,12 +59,14 @@ public class powerUpSpeed : MonoBehaviour {
         {
             TwoPlayerController.fishBonusSpeedP1 = 1;
             P1spawnRatio = 1;
+            p1Storm.SetActive(false);
         }
 
         if (player == 2)
         {
             TwoPlayerController.fishBonusSpeedP2 = 1;
             P2spawnRatio = 1;
+            p2Storm.SetActive(false);
         }
     }
 
