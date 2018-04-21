@@ -2,7 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
+<<<<<<< HEAD
 using UnityEditor.Android;
+=======
+<<<<<<< HEAD
+//using UnityEditor.Android;
+=======
+>>>>>>> 2faf2d19c2f26fde8c0480437af114d96eb29be7
+>>>>>>> parent of 1338e7e... Revert "Merge branch 'master' of https://github.com/UoSGroupProjects1718/mgp-mgp-group-13"
 
 public class FishController : MonoBehaviour {
 

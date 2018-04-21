@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Game Project - Unity/Fishing/Assets/Sprites/Raw.meta
 guid: 5cf0f7d2fabc3154cb71b63651bb927b
 folderAsset: yes
 timeCreated: 1524083696
+=======
+guid: 664c0beeb8956384abfd3abb81324979
+folderAsset: yes
+timeCreated: 1524214864
+>>>>>>> parent of 1338e7e... Revert "Merge branch 'master' of https://github.com/UoSGroupProjects1718/mgp-mgp-group-13":Game Project - Unity/Fishing/Assets/Sprites/Background/PowerUp Feedback.meta
 licenseType: Free
 DefaultImporter:
   externalObjects: {}

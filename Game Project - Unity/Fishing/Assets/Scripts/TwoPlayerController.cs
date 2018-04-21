@@ -52,8 +52,8 @@ public class TwoPlayerController : MonoBehaviour {
         lineDown = true; // makes sure that the line is in its starting position
         lineMoving = false;
 
-        Button P1Input = P1Button.GetComponent<Button>();
-        Button P2Input = P2Button.GetComponent<Button>();
+        //Button P1Input = P1Button.GetComponent<Button>();
+        //Button P2Input = P2Button.GetComponent<Button>();
 
         //on start, add the tally objects into each plauyers list
         P1tallyList.Add(P1tally1);
