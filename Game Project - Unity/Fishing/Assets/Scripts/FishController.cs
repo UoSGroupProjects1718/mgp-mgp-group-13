@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
-//using UnityEditor.Android;
+using UnityEditor.Android;
 
 public class FishController : MonoBehaviour {
 
@@ -101,7 +101,7 @@ public class FishController : MonoBehaviour {
                 touching = false; // set the fish touching to false so that catch code isn't run constantly while fish is in the rod
 
                 PlayerCont.ZapFeedback(PlayerID);  //call function in twoplayercontroller to start feedback for the relevant player
-                Handheld.Vibrate();                 //haptic feedback  -COMMENTED OUT AS BREAKS PC BUILD (works fine for mobile builds)
+                //Handheld.Vibrate();                 //haptic feedback  -COMMENTED OUT AS BREAKS PC BUILD (works fine for mobile builds)
             }
         }
 
