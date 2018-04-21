@@ -2,14 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
-<<<<<<< HEAD
-using UnityEditor.Android;
-=======
-<<<<<<< HEAD
 //using UnityEditor.Android;
-=======
->>>>>>> 2faf2d19c2f26fde8c0480437af114d96eb29be7
->>>>>>> parent of 1338e7e... Revert "Merge branch 'master' of https://github.com/UoSGroupProjects1718/mgp-mgp-group-13"
 
 public class FishController : MonoBehaviour {
 
@@ -108,7 +101,7 @@ public class FishController : MonoBehaviour {
                 touching = false; // set the fish touching to false so that catch code isn't run constantly while fish is in the rod
 
                 PlayerCont.ZapFeedback(PlayerID);  //call function in twoplayercontroller to start feedback for the relevant player
-                //Handheld.Vibrate();                 //haptic feedback  -COMMENTED OUT AS BREAKS PC BUILD (works fine for mobile builds)
+                Handheld.Vibrate();                 //haptic feedback  -COMMENTED OUT AS BREAKS PC BUILD (works fine for mobile builds)
             }
         }
 

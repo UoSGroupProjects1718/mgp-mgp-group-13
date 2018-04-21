@@ -12,14 +12,7 @@ public class powerUpSpeed : MonoBehaviour {
     public static float P1spawnRatio, P2spawnRatio;
     public static bool p1Ready = false, p2Ready = false;
 
-<<<<<<< HEAD
-=======
     public GameObject p1Storm, p2Storm;
-<<<<<<< HEAD
-=======
-
->>>>>>> 2faf2d19c2f26fde8c0480437af114d96eb29be7
->>>>>>> parent of 1338e7e... Revert "Merge branch 'master' of https://github.com/UoSGroupProjects1718/mgp-mgp-group-13"
 
     //sets fish speed mutiplier to bonus value 
     public void SpeedPowerStartP1()
@@ -31,6 +24,7 @@ public class powerUpSpeed : MonoBehaviour {
         p1button.interactable = false;
         //P2spawnRatio = 1;
         StartCoroutine(SpeedPowerupTime(2));
+        p2Storm.SetActive(true);
 
     }
 
@@ -43,6 +37,7 @@ public class powerUpSpeed : MonoBehaviour {
         p2button.interactable = false;
         //P1spawnRatio = 1;
         StartCoroutine(SpeedPowerupTime(1));
+        p1Storm.SetActive(true);
 
     }
 
@@ -63,12 +58,14 @@ public class powerUpSpeed : MonoBehaviour {
         {
             TwoPlayerController.fishBonusSpeedP1 = 1;
             P1spawnRatio = 1;
+            p1Storm.SetActive(false);
         }
 
         if (player == 2)
         {
             TwoPlayerController.fishBonusSpeedP2 = 1;
             P2spawnRatio = 1;
+            p2Storm.SetActive(false);
         }
     }
 
