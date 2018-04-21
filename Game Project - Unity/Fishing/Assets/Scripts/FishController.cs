@@ -2,10 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Animations;
-<<<<<<< HEAD
 //using UnityEditor.Android;
-=======
->>>>>>> 2faf2d19c2f26fde8c0480437af114d96eb29be7
 
 public class FishController : MonoBehaviour {
 

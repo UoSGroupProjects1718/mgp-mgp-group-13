@@ -7,8 +7,7 @@ using UnityEngine.UI;
 public class restartController : MonoBehaviour {
 
     public Toggle  p1, p2;
-    public string targetScene;
-
+    
     public void p1Ready()
     {
     //    p1 = true;
@@ -60,7 +59,7 @@ public class restartController : MonoBehaviour {
         //when both players are ready the game begins
         if (p1.isOn == true & p2.isOn == true)
         {
-            SceneManager.LoadScene(targetScene, LoadSceneMode.Single);
+            SceneManager.LoadScene("main", LoadSceneMode.Single);
         }
         
 	}

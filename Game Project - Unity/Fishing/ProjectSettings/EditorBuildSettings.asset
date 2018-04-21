@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Scenes/Start.unity
     guid: d5ba9e919d53e0946a4b6ee9a4611366
-  - enabled: 0
+  - enabled: 1
     path: Assets/_Scenes/Ready_Up.unity
     guid: bc2e7d6677c596d4a9b1a32cc303aaa4
   - enabled: 1
@@ -18,8 +18,5 @@ EditorBuildSettings:
     path: Assets/_Scenes/main.unity
     guid: a1a3d56630074764e8c020f453a0b4cd
   - enabled: 1
-    path: Assets/_Scenes/Ready_Up_2.unity
-    guid: 9c72f717ad349d346895534148fa91f1
-  - enabled: 1
     path: Assets/_Scenes/win.unity
-    guid: 4caca2ffe19059c41838ad31b34da3f3
+    guid: 9c72f717ad349d346895534148fa91f1

@@ -28,7 +28,7 @@ sysinfo.txt
 # Builds
 *.unitypackage
 
-/Library/
+**//Library/*.*
 Game_Project_-_Unity/Fishing/Temp/*.*
 Game_Project_-_Unity/Fishing/.vs/*.*
 

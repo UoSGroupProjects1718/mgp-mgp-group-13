@@ -6,13 +6,11 @@ using UnityEngine.UI;
 
 public class MenuManager : MonoBehaviour {
 	public AudioClip buttonPress;
-	//public AudioSource audio; -- .audio is already an in-use variable by the engine, removing to prevent errorsa, will rename when implimented.
+	public AudioSource audio;
 	public GameObject pauseMenuUI;
 	public GameObject unpauseUI;
-	//public Toggle  p1, p2;
+	public Toggle  p1, p2;
 	public Toggle unpause1, unpause2;
-
-    private bool isPaused;
 
 	/*DontDestroyOnLoad(this.gameObject) prevents the LevelManager game object from being destroyed between scenes
 		public void LoadLevel() { //applied to UI buttons so that they send a debug message to console and the "main" scene is loaded when clicked
@@ -39,7 +37,7 @@ public class MenuManager : MonoBehaviour {
         Time.timeScale = 1f;
         int c = SceneManager.GetActiveScene().buildIndex;
         if (c < SceneManager.sceneCountInBuildSettings)
-            SceneManager.LoadScene("Ready_Up_2");
+            SceneManager.LoadScene("Ready_Up");
             DontDestroyOnLoad(this.gameObject);
 
 
@@ -53,16 +51,13 @@ public class MenuManager : MonoBehaviour {
 	public void Resume(){
 		pauseMenuUI.SetActive(false);
 		unpauseUI.SetActive(true);
-        //Time.timeScale = 1f;
-        isPaused = false;
+		//Time.timeScale = 1f;
 	}
 
 
 	public void Pause(){
 		pauseMenuUI.SetActive(true);
 		Time.timeScale = 0f;
-        isPaused = true;
-
 	}
 
     void Update()
@@ -85,56 +80,54 @@ public class MenuManager : MonoBehaviour {
         {
 
         }
-        //// gives p1 an input button which will interact with thier toggle and flip flop it
-        //if (Input.GetKey(KeyCode.LeftControl) == true)
-        //{
-        //    //  if (p1.isOn == false)
-        //    p1.isOn = true;
-
-        //    // if (p1.isOn == true)
-        //    //     p1.isOn = false;
-        //}
-
-        //// gives p2 an input button which will interact with thier toggle and flip flop it
-        //if (Input.GetKeyDown(KeyCode.RightControl) == true)
-        //{
-        //    //  if (p2.isOn == false)
-        //    p2.isOn = true;
-
-        //    //  if (p2.isOn == true)
-        //    //     p2.isOn = false;
-        //}
-
-
-
-
-        ////when both players are ready the game begins
-        //try
-        //{
-        //    if (p1.isOn == true & p2.isOn == true)
-        //    {
-        //        SceneManager.LoadScene("main", LoadSceneMode.Single);
-        //        DontDestroyOnLoad(this.gameObject);
-        //        pauseMenuUI.SetActive(false);
-        //        //unpauseUI.SetActive(false);
-        //    }
-        //}
-        //catch (System.NullReferenceException)
-        //{
-        //}
-
-
-        if (isPaused) //checks the game is paused before looking for unpause inputs
+        // gives p1 an input button which will interact with thier toggle and flip flop it
+        if (Input.GetKey(KeyCode.LeftControl) == true)
         {
-            if (Input.GetKeyDown(KeyCode.RightControl) == true)
-            {
-                unpause1.isOn = true;
-            }
+            //  if (p1.isOn == false)
+            p1.isOn = true;
 
-            if (Input.GetKeyDown(KeyCode.LeftControl) == true)
+            // if (p1.isOn == true)
+            //     p1.isOn = false;
+        }
+
+        // gives p2 an input button which will interact with thier toggle and flip flop it
+        if (Input.GetKeyDown(KeyCode.RightControl) == true)
+        {
+            //  if (p2.isOn == false)
+            p2.isOn = true;
+
+            //  if (p2.isOn == true)
+            //     p2.isOn = false;
+        }
+
+
+
+
+        //when both players are ready the game begins
+        try
+        {
+            if (p1.isOn == true & p2.isOn == true)
             {
-                unpause2.isOn = true;
+                SceneManager.LoadScene("main", LoadSceneMode.Single);
+                DontDestroyOnLoad(this.gameObject);
+                pauseMenuUI.SetActive(false);
+                //unpauseUI.SetActive(false);
             }
+        }
+        catch (System.NullReferenceException)
+        {
+        }
+
+
+
+        if (Input.GetKeyDown(KeyCode.RightControl) == true)
+        {
+            unpause1.isOn = true;
+        }
+
+        if (Input.GetKeyDown(KeyCode.LeftControl) == true)
+        {
+            unpause2.isOn = true;
         }
     }
 
