@@ -113,6 +113,10 @@ MonoBehaviour:
     type: 2}
   JellyParticle: {fileID: 1902972478859640, guid: ff3750f95e36224448f36d44804450aa,
     type: 2}
+  JellyPowerUpParticle: {fileID: 1662620331705688, guid: 093b5488ae03e1e4e8cd3b2c28cc4f15,
+    type: 2}
+  SpeedPowerUpParticle: {fileID: 1455707513487948, guid: e83394bb25b32064584c6736198f02be,
+    type: 2}
 --- !u!212 &212723075169140978
 SpriteRenderer:
   m_ObjectHideFlags: 1
