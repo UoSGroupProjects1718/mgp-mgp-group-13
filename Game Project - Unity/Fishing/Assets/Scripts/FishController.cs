@@ -23,6 +23,8 @@ public class FishController : MonoBehaviour {
 
     public GameObject FishParticle;
     public GameObject JellyParticle;
+    public GameObject JellyPowerUpParticle;
+    public GameObject SpeedPowerUpParticle;
 
 
 
@@ -103,7 +105,7 @@ public class FishController : MonoBehaviour {
                 PlayerCont.lineMoving = true; //code to change and switch lines to the other players side
                 touching = false; // set the fish touching to false so that catch code isn't run constantly while fish is in the rod
 
-                GameObject feedback = Instantiate(JellyParticle, gameObject.transform); //instantiate green success particles at fish position
+                GameObject feedback = Instantiate(JellyParticle, gameObject.transform); //instantiate red zap particles at fish position
                 feedback.transform.parent = null;   //stops the particles being set to inactive along with the fish/following the fish's transform
 
                 PlayerCont.ZapFeedback(PlayerID);  //call function in twoplayercontroller to start feedback for the relevant player
@@ -128,6 +130,10 @@ public class FishController : MonoBehaviour {
                     powerUpJelly.p2Ready = true;
                     buttonController.p2Jelly.interactable = true;
                 }
+
+                GameObject feedback = Instantiate(JellyPowerUpParticle, gameObject.transform); //instantiate pink jelly particles at fish position
+                feedback.transform.parent = null;   //stops the particles being set to inactive along with the fish/following the fish's transform
+
                 //remove the fish and set it's touching to false to stop it constantly run the catch code
                 gameObject.SetActive(false);
                 touching = false;
@@ -146,6 +152,10 @@ public class FishController : MonoBehaviour {
                     powerUpSpeed.p2Ready = true;
                     buttonController.p2Speed.interactable = true;
                 }
+
+                GameObject feedback = Instantiate(SpeedPowerUpParticle, gameObject.transform); //instantiate yellow lightning particles at fish position
+                feedback.transform.parent = null;   //stops the particles being set to inactive along with the fish/following the fish's transform
+
                 gameObject.SetActive(false);
                 touching = false;
             }

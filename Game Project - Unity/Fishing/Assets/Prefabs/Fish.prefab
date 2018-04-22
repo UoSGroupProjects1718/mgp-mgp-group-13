@@ -109,7 +109,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   PlayerID: 0
-  SuccessParticle: {fileID: 1903393132720688, guid: 80d3b81312700124c965a640d00b4338,
+  FishParticle: {fileID: 1903393132720688, guid: 80d3b81312700124c965a640d00b4338,
+    type: 2}
+  JellyParticle: {fileID: 1902972478859640, guid: ff3750f95e36224448f36d44804450aa,
     type: 2}
 --- !u!212 &212723075169140978
 SpriteRenderer:
