@@ -147,9 +147,9 @@ public class FishController : MonoBehaviour {
             }
             else //if it's a regular scoring fish
             {
-                GameObject feedback = Instantiate(SuccessParticle, gameObject.transform);
-                feedback.transform.parent = null;
-                
+                GameObject feedback = Instantiate(SuccessParticle, gameObject.transform); //instantiate green success particles at fish position
+                feedback.transform.parent = null;   //stops the particles being set to inactive along with the fish/following the fish's transform
+
                 gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
                 PlayerCont.addScore(PlayerID, Info.ScoreValue); //add the score of the fish to the player who caught it
                 
@@ -158,6 +158,7 @@ public class FishController : MonoBehaviour {
         }
 
     }
+
 }
 
 
