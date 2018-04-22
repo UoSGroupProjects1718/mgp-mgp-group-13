@@ -21,10 +21,11 @@ public class FishController : MonoBehaviour {
     private Animator animator;
     private float BlendValue;
 
-    public GameObject SuccessParticle;
-   
-    
-  
+    public GameObject FishParticle;
+    public GameObject JellyParticle;
+
+
+
     private bool touching;
 
     public void SetupFish(int dir, Fish info, int PlayerRef)
@@ -102,6 +103,9 @@ public class FishController : MonoBehaviour {
                 PlayerCont.lineMoving = true; //code to change and switch lines to the other players side
                 touching = false; // set the fish touching to false so that catch code isn't run constantly while fish is in the rod
 
+                GameObject feedback = Instantiate(JellyParticle, gameObject.transform); //instantiate green success particles at fish position
+                feedback.transform.parent = null;   //stops the particles being set to inactive along with the fish/following the fish's transform
+
                 PlayerCont.ZapFeedback(PlayerID);  //call function in twoplayercontroller to start feedback for the relevant player
                 Handheld.Vibrate();                 //haptic feedback  -COMMENTED OUT AS BREAKS PC BUILD (works fine for mobile builds)
             }
@@ -147,7 +151,7 @@ public class FishController : MonoBehaviour {
             }
             else //if it's a regular scoring fish
             {
-                GameObject feedback = Instantiate(SuccessParticle, gameObject.transform); //instantiate green success particles at fish position
+                GameObject feedback = Instantiate(FishParticle, gameObject.transform); //instantiate green success particles at fish position
                 feedback.transform.parent = null;   //stops the particles being set to inactive along with the fish/following the fish's transform
 
                 gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
