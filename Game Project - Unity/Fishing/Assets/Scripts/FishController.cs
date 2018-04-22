@@ -20,6 +20,8 @@ public class FishController : MonoBehaviour {
 
     private Animator animator;
     private float BlendValue;
+
+    public GameObject SuccessParticle;
    
     
   
@@ -145,8 +147,12 @@ public class FishController : MonoBehaviour {
             }
             else //if it's a regular scoring fish
             {
+                GameObject feedback = Instantiate(SuccessParticle, gameObject.transform);
+                feedback.transform.parent = null;
+                
                 gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
                 PlayerCont.addScore(PlayerID, Info.ScoreValue); //add the score of the fish to the player who caught it
+                
             }
             
         }

@@ -109,6 +109,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 6
   PlayerID: 0
+  SuccessParticle: {fileID: 1903393132720688, guid: 80d3b81312700124c965a640d00b4338,
+    type: 2}
 --- !u!212 &212723075169140978
 SpriteRenderer:
   m_ObjectHideFlags: 1
