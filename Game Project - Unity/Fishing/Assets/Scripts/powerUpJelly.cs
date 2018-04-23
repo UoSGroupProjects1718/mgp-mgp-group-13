@@ -12,6 +12,8 @@ public class powerUpJelly : MonoBehaviour
     public static int p1JellyFactor = 0 , p2JellyFactor = 0;
     public static bool p1Ready = false, p2Ready = false;
 
+    public GameObject p1Jelly, p2Jelly;
+
 
     //sets fish speed mutiplier to bonus value 
     public void JellyPowerStartP1()
@@ -20,6 +22,7 @@ public class powerUpJelly : MonoBehaviour
         p1Ready = false;
         p1button.interactable = false;
         StartCoroutine(JellyPowerupTime(2));
+        p2Jelly.SetActive(true);
     }
 
     public void JellyPowerStartP2()
@@ -28,6 +31,7 @@ public class powerUpJelly : MonoBehaviour
         p2Ready = false;
         p2button.interactable = false;
         StartCoroutine(JellyPowerupTime(1));
+        p1Jelly.SetActive(true);
     }
 
 
@@ -42,8 +46,18 @@ public class powerUpJelly : MonoBehaviour
     //sets fish speed mutiplier to normal
     void SpeedPowerStop(int player)
     {
-        if (player == 1) p1JellyFactor = 0;
-        if (player == 2) p2JellyFactor = 0;
+        if (player == 1)
+        {
+            p1JellyFactor = 0;
+            p1Jelly.SetActive(false);
+
+        }
+
+        if (player == 2)
+        {
+            p2JellyFactor = 0;
+            p2Jelly.SetActive(false);
+        }
     }
 
     private void Start()
