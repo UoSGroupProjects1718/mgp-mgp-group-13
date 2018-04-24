@@ -10,7 +10,7 @@ public class WinTextController : MonoBehaviour {
 
     public Image p1Bubble, p2Bubble;
 
-    public Sprite winBubble, loseBubble;
+    public Sprite winBubble, loseBubble, drawBubble;
 
     void hasWon()
     {
@@ -51,8 +51,8 @@ public class WinTextController : MonoBehaviour {
 
         if (P2Score == P1Score)
         {
-            p1Bubble.sprite = winBubble;
-            p2Bubble.sprite = winBubble;
+            p1Bubble.sprite = drawBubble;
+            p2Bubble.sprite = drawBubble;
         }
 
 

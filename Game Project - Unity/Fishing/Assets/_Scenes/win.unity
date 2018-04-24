@@ -1282,6 +1282,7 @@ MonoBehaviour:
   p2Bubble: {fileID: 1707201422}
   winBubble: {fileID: 21300000, guid: 9118a0847f96ceb4c9c9da3de91ce043, type: 3}
   loseBubble: {fileID: 21300000, guid: 9a80f702aec8dab4c9ace47b5f8215b6, type: 3}
+  drawBubble: {fileID: 21300000, guid: 8fd74a6c552225c46b2e52df5e2a4948, type: 3}
 --- !u!4 &1242991869
 Transform:
   m_ObjectHideFlags: 0
