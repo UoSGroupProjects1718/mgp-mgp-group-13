@@ -5,8 +5,12 @@ using UnityEngine.UI;
 
 public class WinTextController : MonoBehaviour {
 
-    public Text p1P1Score, p1P2Score, p1Text, p2P1Score, p2P2Score, p2Text;
+    public Text p1P1Score, p1P2Score, p2P1Score, p2P2Score;
     private int P1Score, P2Score;
+
+    public Image p1Bubble, p2Bubble;
+
+    public Sprite winBubble, loseBubble;
 
     void hasWon()
     {
@@ -24,31 +28,31 @@ public class WinTextController : MonoBehaviour {
 
     {
         //sets both players score displays
-        p1P1Score.text = "P1 " + P1Score.ToString();
-        p1P2Score.text = "P2 " + P2Score.ToString();
+        p1P1Score.text = P1Score.ToString();
+        p1P2Score.text = P2Score.ToString();
         
-        p2P1Score.text = "P1 " + P1Score.ToString();
-        p2P2Score.text = "P2 " + P2Score.ToString();
+        p2P1Score.text = P1Score.ToString();
+        p2P2Score.text = P2Score.ToString();
 
 
 
         //sets the win / lose screen's for both players or a draw
         if (P1Score > P2Score)
-            {
-            p1Text.text = "you Win!";
-            p2Text.text = "you Lose!";
-            }
+        {
+            p1Bubble.sprite = winBubble;
+            p2Bubble.sprite = loseBubble;
+        }
 
         if (P2Score > P1Score)
         {
-            p1Text.text = "you Lose!";
-            p2Text.text = "you Win!";
+            p1Bubble.sprite = loseBubble;
+            p2Bubble.sprite = winBubble;
         }
 
         if (P2Score == P1Score)
         {
-            p1Text.text = "DRAW";
-            p2Text.text = "DRAW";
+            p1Bubble.sprite = winBubble;
+            p2Bubble.sprite = winBubble;
         }
 
 
