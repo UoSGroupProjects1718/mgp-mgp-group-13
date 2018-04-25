@@ -5,13 +5,13 @@ AnimatorController:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: ui_fish
+  m_Name: P1 Jelly
   serializedVersion: 5
   m_AnimatorParameters: []
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer
-    m_StateMachine: {fileID: 1107878591597193000}
+    m_StateMachine: {fileID: 1107358993230157364}
     m_Mask: {fileID: 0}
     m_Motions: []
     m_Behaviours: []
@@ -21,13 +21,13 @@ AnimatorController:
     m_IKPass: 0
     m_SyncedLayerAffectsTiming: 0
     m_Controller: {fileID: 9100000}
---- !u!1102 &1102630104781202638
+--- !u!1102 &1102291539440293878
 AnimatorState:
   serializedVersion: 5
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
-  m_Name: TimerFish
+  m_Name: JellyFeedback
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -40,13 +40,13 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 212c01329ab56f341a21e98147a56992, type: 2}
+  m_Motion: {fileID: 7400000, guid: b5835eaf8072c8741a8bb9da5388c875, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 
   m_CycleOffsetParameter: 
   m_TimeParameter: 
---- !u!1107 &1107878591597193000
+--- !u!1107 &1107358993230157364
 AnimatorStateMachine:
   serializedVersion: 5
   m_ObjectHideFlags: 1
@@ -55,8 +55,8 @@ AnimatorStateMachine:
   m_Name: Base Layer
   m_ChildStates:
   - serializedVersion: 1
-    m_State: {fileID: 1102630104781202638}
-    m_Position: {x: 252, y: 48, z: 0}
+    m_State: {fileID: 1102291539440293878}
+    m_Position: {x: 200, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -66,4 +66,4 @@ AnimatorStateMachine:
   m_EntryPosition: {x: 50, y: 120, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
-  m_DefaultState: {fileID: 1102630104781202638}
+  m_DefaultState: {fileID: 1102291539440293878}

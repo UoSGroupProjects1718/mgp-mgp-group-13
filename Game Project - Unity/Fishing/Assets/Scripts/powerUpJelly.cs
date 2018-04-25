@@ -14,6 +14,8 @@ public class powerUpJelly : MonoBehaviour
 
     public GameObject p1Jelly, p2Jelly;
 
+    public Animator ani;
+
 
     //sets fish speed mutiplier to bonus value 
     public void JellyPowerStartP1()
@@ -23,6 +25,7 @@ public class powerUpJelly : MonoBehaviour
         p1button.interactable = false;
         StartCoroutine(JellyPowerupTime(2));
         p2Jelly.SetActive(true);
+        ani.Play("JellyFeedback");
     }
 
     public void JellyPowerStartP2()

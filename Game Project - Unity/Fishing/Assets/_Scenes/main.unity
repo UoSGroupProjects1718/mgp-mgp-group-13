@@ -551,6 +551,7 @@ MonoBehaviour:
   jellyFactor: 45
   p1Jelly: {fileID: 341668947}
   p2Jelly: {fileID: 882910263}
+  ani: {fileID: 0}
 --- !u!1001 &136130166
 Prefab:
   m_ObjectHideFlags: 0
@@ -923,6 +924,7 @@ GameObject:
   m_Component:
   - component: {fileID: 341668948}
   - component: {fileID: 341668949}
+  - component: {fileID: 341668950}
   m_Layer: 0
   m_Name: P1 Jelly
   m_TagString: Untagged
@@ -987,6 +989,23 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
+--- !u!95 &341668950
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 341668947}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88baa0819ebfd984f85923b9bf011016, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &361769752 stripped
 GameObject:
   m_PrefabParentObject: {fileID: 1831810920351344, guid: 3a9752509066de340af7ca19d702f832,
@@ -1625,6 +1644,7 @@ GameObject:
   m_Component:
   - component: {fileID: 882910265}
   - component: {fileID: 882910264}
+  - component: {fileID: 882910266}
   m_Layer: 0
   m_Name: P2 Jelly
   m_TagString: Untagged
@@ -1689,6 +1709,23 @@ Transform:
   m_Father: {fileID: 1267677833}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &882910266
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 882910263}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 88baa0819ebfd984f85923b9bf011016, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!1 &915730984
 GameObject:
   m_ObjectHideFlags: 0
