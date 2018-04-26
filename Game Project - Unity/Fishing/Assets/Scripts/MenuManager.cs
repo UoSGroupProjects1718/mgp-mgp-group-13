@@ -11,8 +11,10 @@ public class MenuManager : MonoBehaviour {
 	public GameObject unpauseUI;
 	public Toggle  p1, p2;
 	public Toggle unpause1, unpause2;
+    public GameObject BGMController;
+    private AudioSource audioSource;
 
-	/*DontDestroyOnLoad(this.gameObject) prevents the LevelManager game object from being destroyed between scenes
+    /*DontDestroyOnLoad(this.gameObject) prevents the LevelManager game object from being destroyed between scenes
 		public void LoadLevel() { //applied to UI buttons so that they send a debug message to console and the "main" scene is loaded when clicked
         Debug.Log("Level load requested for : ");
         int c = SceneManager.GetActiveScene().buildIndex;
@@ -21,7 +23,7 @@ public class MenuManager : MonoBehaviour {
 			DontDestroyOnLoad(this.gameObject); 
 	}*/
 
-	public void MainMenu() {
+    public void MainMenu() {
 		SceneManager.LoadScene("Start");
 		DontDestroyOnLoad(this.gameObject);
 	}
@@ -51,14 +53,21 @@ public class MenuManager : MonoBehaviour {
 	public void Resume(){
 		pauseMenuUI.SetActive(false);
 		unpauseUI.SetActive(true);
-		//Time.timeScale = 1f;
-	}
+        //Time.timeScale = 1f;
+        
+    }
 
 
 	public void Pause(){
 		pauseMenuUI.SetActive(true);
 		Time.timeScale = 0f;
-	}
+        audioSource.Pause();
+    }
+
+    private void Start()
+    {
+        audioSource = BGMController.GetComponent<AudioSource>();
+    }
 
     void Update()
     {
@@ -72,6 +81,7 @@ public class MenuManager : MonoBehaviour {
                 Debug.Log("start play");
                 unpause1.isOn = false;
                 unpause2.isOn = false;
+                audioSource.Play();
 
                 //Resume();
             }
