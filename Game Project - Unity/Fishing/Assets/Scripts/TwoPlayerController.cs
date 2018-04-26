@@ -80,7 +80,7 @@ public class TwoPlayerController : MonoBehaviour {
         }
 
         //reference the buttons from the PowerUpsController so they can be changed as needed.
-        buttonControl = GameObject.Find("PowerUpsController");
+        buttonControl = GameObject.Find("PowerupController");
         buttonController = buttonControl.GetComponent<powerupButtonController>();
     }
 

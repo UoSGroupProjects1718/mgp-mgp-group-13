@@ -50,7 +50,7 @@ public class FishController : MonoBehaviour {
         //get other game objects and their components for reference
         controller = GameObject.Find("PlayerController");        
         PlayerCont = controller.GetComponent<TwoPlayerController>();
-        buttonControl = GameObject.Find("PowerUpsController");
+        buttonControl = GameObject.Find("PowerupController");
         buttonController = buttonControl.GetComponent<powerupButtonController>();
     }
 	
