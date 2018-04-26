@@ -16,20 +16,23 @@ public class powerUpJelly : MonoBehaviour
 
     public Animator ani;
 
+    public AudioSource jellyPowerAudio, buttonUseAudio;
 
     //sets fish speed mutiplier to bonus value 
     public void JellyPowerStartP1()
     {
+        buttonUseAudio.Play();
         p2JellyFactor = jellyFactor;
         p1Ready = false;
         p1button.interactable = false;
         StartCoroutine(JellyPowerupTime(2));
         p2Jelly.SetActive(true);
-        ani.Play("JellyFeedback");
+        // ani.Play("JellyFeedback");
     }
 
     public void JellyPowerStartP2()
     {
+        buttonUseAudio.Play();
         p1JellyFactor = jellyFactor;
         p2Ready = false;
         p2button.interactable = false;

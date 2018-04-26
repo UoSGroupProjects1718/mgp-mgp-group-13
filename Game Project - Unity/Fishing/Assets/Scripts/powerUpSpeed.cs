@@ -13,10 +13,27 @@ public class powerUpSpeed : MonoBehaviour {
     public static bool p1Ready = false, p2Ready = false;
 
     public GameObject p1Storm, p2Storm;
+    public AudioSource speedPowerAudio, buttonUseAudio;
+
+
+
+    void Start()
+    {
+
+        
+        P1spawnRatio = 1;
+        P2spawnRatio = 1;
+
+        
+
+    }
+
 
     //sets fish speed mutiplier to bonus value 
     public void SpeedPowerStartP1()
     {
+
+        buttonUseAudio.Play();
 
         TwoPlayerController.fishBonusSpeedP2 = speedRatio;
         P2spawnRatio = (1f / speedRatio);
@@ -30,6 +47,7 @@ public class powerUpSpeed : MonoBehaviour {
 
     public void SpeedPowerStartP2()
     {
+        buttonUseAudio.Play();
 
         TwoPlayerController.fishBonusSpeedP1 = speedRatio;
         P1spawnRatio = (1f / speedRatio);
@@ -45,7 +63,8 @@ public class powerUpSpeed : MonoBehaviour {
     //coroutine for powerup time
     public IEnumerator SpeedPowerupTime(int player)
     {
-    
+        speedPowerAudio.Play();
+
         yield return new WaitForSeconds(speedTime);
         SpeedPowerStop(player);
     }
@@ -69,13 +88,7 @@ public class powerUpSpeed : MonoBehaviour {
         }
     }
 
-    // Use this for initialization
-    void Start ()
-    {
-        P1spawnRatio = 1;
-        P2spawnRatio = 1;
 
-    }
 
     // Update is called once per frame
     void Update()

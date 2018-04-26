@@ -11,6 +11,8 @@ public class TwoPlayerController : MonoBehaviour {
     public static int P1Score, P2Score;
     public static float fishBonusSpeedP1, fishBonusSpeedP2; //change the speed of the fish when speed powerup is active
 
+    private AudioSource audioHandler;
+
     private bool p1gLate, p2gLate;
 
     public Button P1Button;
@@ -43,6 +45,8 @@ public class TwoPlayerController : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+        audioHandler = GetComponent<AudioSource>();
+
         //initialise variables for both players
         P1Score = 0; 
         P2Score = 0;
@@ -183,6 +187,7 @@ public class TwoPlayerController : MonoBehaviour {
 
     public void ButtonPressed(Button PushedButton)
     {
+        audioHandler.Play();
         //check what player pressed their button and transistion of the lines as appropriate
         //^ functions named P1Go and P2Go below
         if (PushedButton.name == "P1Input")

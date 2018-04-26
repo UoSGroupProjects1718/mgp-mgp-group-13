@@ -26,6 +26,14 @@ public class FishController : MonoBehaviour {
     public GameObject JellyPowerUpParticle;
     public GameObject SpeedPowerUpParticle;
 
+    private AudioSource audioHandler;
+    private GameObject SFXController;
+    private AudioSource SFXHandler;
+
+    public AudioClip jellyZapAudio, otterSqueakAudio;
+
+
+
 
 
     private bool touching;
@@ -33,7 +41,7 @@ public class FishController : MonoBehaviour {
     public void SetupFish(int dir, Fish info, int PlayerRef)
     {
         //assign variables for the fish
-             
+
         Info = info; //information from the fish prefab (score)
         direction = dir; //-1 or 1 (to travel left/right) - based on player 
         PlayerID = PlayerRef;
@@ -42,20 +50,28 @@ public class FishController : MonoBehaviour {
 
     }
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start() {
+
+        SFXController = GameObject.Find("SFXController");
+        SFXHandler = SFXController.GetComponent<AudioSource>();
+
+        audioHandler = GetComponent<AudioSource>();
+
+
+
         //SprRen = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
-     
+
         //get other game objects and their components for reference
-        controller = GameObject.Find("PlayerController");        
+        controller = GameObject.Find("PlayerController");
         PlayerCont = controller.GetComponent<TwoPlayerController>();
         buttonControl = GameObject.Find("PowerupController");
         buttonController = buttonControl.GetComponent<powerupButtonController>();
     }
-	
-	// Update is called once per frame
-	void Update () {
+
+    // Update is called once per frame
+    void Update() {
 
         animator.SetFloat("Blend", BlendValue);
 
@@ -79,7 +95,7 @@ public class FishController : MonoBehaviour {
         {
             CatchFish(Info); //if fish is colliding with rod, use as parameter into a function to check type of fish      
         }
-        
+
     }
 
     //if fish collides with the rod, set the boolean to say it's in contact to true - to work for checking fish catching
@@ -96,11 +112,17 @@ public class FishController : MonoBehaviour {
 
     void CatchFish(Fish fish) //when fish collide with the line check how to handle based on fish type
     {
+
+
         //jellyfish handler - if statement checks that the line isn't moving
         if (PlayerCont.lineMoving == false)
         {
+
             if (fish.Name == "JellyFish") //if the fish is a jellyfish, add a negative score and retract line to the other players side.
             {
+                audioHandler.clip = jellyZapAudio;
+                audioHandler.Play();
+
                 PlayerCont.addScore(PlayerID, fish.ScoreValue);
                 PlayerCont.lineMoving = true; //code to change and switch lines to the other players side
                 touching = false; // set the fish touching to false so that catch code isn't run constantly while fish is in the rod
@@ -116,9 +138,12 @@ public class FishController : MonoBehaviour {
         //nested loops for the seperate catachable fish - this major if statement checks if a player taps the screen on their side whilst it is their turn.
         if ((PlayerCont.P1ButtonDown == true && PlayerCont.lineDown == true) || (PlayerCont.P2ButtonDown == true && PlayerCont.lineDown == false) && PlayerCont.lineMoving == false)
         {
+
+
             //check if it's the jelly powerup
             if (fish.Name == "jellyPickup")
             {
+
                 //depending on who caught the fish, make their power-up button active
                 if (PlayerID == 1)
                 {
@@ -134,6 +159,7 @@ public class FishController : MonoBehaviour {
                 GameObject feedback = Instantiate(JellyPowerUpParticle, gameObject.transform); //instantiate pink jelly particles at fish position
                 feedback.transform.parent = null;   //stops the particles being set to inactive along with the fish/following the fish's transform
 
+            
                 //remove the fish and set it's touching to false to stop it constantly run the catch code
                 gameObject.SetActive(false);
                 touching = false;
@@ -156,6 +182,7 @@ public class FishController : MonoBehaviour {
                 GameObject feedback = Instantiate(SpeedPowerUpParticle, gameObject.transform); //instantiate yellow lightning particles at fish position
                 feedback.transform.parent = null;   //stops the particles being set to inactive along with the fish/following the fish's transform
 
+
                 gameObject.SetActive(false);
                 touching = false;
             }
@@ -164,14 +191,25 @@ public class FishController : MonoBehaviour {
                 GameObject feedback = Instantiate(FishParticle, gameObject.transform); //instantiate green success particles at fish position
                 feedback.transform.parent = null;   //stops the particles being set to inactive along with the fish/following the fish's transform
 
+
+
                 gameObject.SetActive(false); //set fish inactive if input if pressed while fish is colliding
                 PlayerCont.addScore(PlayerID, Info.ScoreValue); //add the score of the fish to the player who caught it
-                
+
+
+
+
             }
-            
+
+            SFXHandler.Play();
+         
         }
 
+
+
     }
+
+
 
 }
 

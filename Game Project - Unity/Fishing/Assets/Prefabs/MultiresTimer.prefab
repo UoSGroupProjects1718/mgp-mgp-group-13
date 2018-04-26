@@ -35,6 +35,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4985074553964818}
   - component: {fileID: 212515978454097786}
+  - component: {fileID: 95583607373366356}
   m_Layer: 0
   m_Name: ui_fish
   m_TagString: Untagged
@@ -176,7 +177,7 @@ Transform:
   m_GameObject: {fileID: 1314361993446342}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.8, y: 1.8, z: 2}
   m_Children:
   - {fileID: 4509869809849154}
   - {fileID: 4617379777761382}
@@ -307,6 +308,23 @@ Transform:
   m_Father: {fileID: 4574818867767910}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!95 &95583607373366356
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1267199082471902}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3ac98ddddeae9534b848e2eee93e1d76, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &114847004844541118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -318,7 +336,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f8012a599580aaa4c8c1f6b4984fd208, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  RoundTime: 60
+  RoundTime: 61.5
   marker: {fileID: 1220904037509722}
   startMarker: {fileID: 4712317331444422}
   endMarker: {fileID: 4380995093621112}
