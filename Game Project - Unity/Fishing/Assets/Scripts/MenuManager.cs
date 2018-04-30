@@ -11,7 +11,7 @@ public class MenuManager : MonoBehaviour {
 	public GameObject unpauseUI;
 	public Toggle  p1, p2;
 	public Toggle unpause1, unpause2;
-    public GameObject BGMController;
+    public GameObject MusicPlayer;
     private AudioSource audioSource;
 
     /*DontDestroyOnLoad(this.gameObject) prevents the LevelManager game object from being destroyed between scenes
@@ -66,7 +66,8 @@ public class MenuManager : MonoBehaviour {
 
     private void Start()
     {
-        audioSource = BGMController.GetComponent<AudioSource>();
+        MusicPlayer = GameObject.Find("MusicPlayer");
+        audioSource = MusicPlayer.GetComponent<AudioSource>();
     }
 
     void Update()
