@@ -2696,6 +2696,59 @@ Transform:
   m_Father: {fileID: 1778344334}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1001 &1509992245
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4296090298295530, guid: 96c5e87b896d52a4b87517a0e0f24216, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: 470
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296090298295530, guid: 96c5e87b896d52a4b87517a0e0f24216, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: 347.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296090298295530, guid: 96c5e87b896d52a4b87517a0e0f24216, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296090298295530, guid: 96c5e87b896d52a4b87517a0e0f24216, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296090298295530, guid: 96c5e87b896d52a4b87517a0e0f24216, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296090298295530, guid: 96c5e87b896d52a4b87517a0e0f24216, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296090298295530, guid: 96c5e87b896d52a4b87517a0e0f24216, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4296090298295530, guid: 96c5e87b896d52a4b87517a0e0f24216, type: 2}
+      propertyPath: m_RootOrder
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 82180879969886370, guid: 96c5e87b896d52a4b87517a0e0f24216,
+        type: 2}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 243246415825536178, guid: a32e9142e0a03b64abfdd2ca1c4d62e3,
+        type: 2}
+    - target: {fileID: 82180879969886370, guid: 96c5e87b896d52a4b87517a0e0f24216,
+        type: 2}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 023ddc8296d292949a831ce109c09c26, type: 3}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 96c5e87b896d52a4b87517a0e0f24216, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1001 &1521385651
 Prefab:
   m_ObjectHideFlags: 0

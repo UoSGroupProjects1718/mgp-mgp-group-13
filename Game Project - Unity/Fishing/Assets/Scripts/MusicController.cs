@@ -16,7 +16,8 @@ public class MusicController : MonoBehaviour {
             return;
         }
 
-        DontDestroyOnLoad(this.gameObject); //prevents MusicPlayer game object from being destroyed so that the waves music is played consistently throughout each scene 
+        //DontDestroyOnLoad(this.gameObject); //prevents MusicPlayer game object from being destroyed so that the waves music is played consistently throughout each scene 
+        
     }
 }
 
