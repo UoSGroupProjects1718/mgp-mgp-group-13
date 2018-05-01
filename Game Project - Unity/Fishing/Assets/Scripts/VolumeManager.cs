@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class musicHandler : MonoBehaviour {
+public class VolumeManager : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
@@ -10,8 +10,7 @@ public class musicHandler : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-	void Update ()
-    {
+	void Update () {
 		
 	}
 }

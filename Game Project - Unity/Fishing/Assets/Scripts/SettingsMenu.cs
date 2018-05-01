@@ -2,12 +2,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class SettingsMenu : MonoBehaviour {
 
-	public AudioMixer audioMixer;
+    public Slider master, bgm, sfx;
+    private float masterF, bgmF, sfxF;
+    public AudioMixer audioMixer;
 
-	public void SetMasterVolume (float volume)
+    private void Start()
+    {
+        audioMixer.GetFloat("volumeMaster", out masterF);
+        master.value = masterF;
+
+        audioMixer.GetFloat("volumeMusic", out bgmF);
+        bgm.value = bgmF;
+
+        audioMixer.GetFloat("volumeSFX", out sfxF);
+        sfx.value = sfxF;
+
+    }
+
+    public void SetMasterVolume (float volume)
 	{
 		
 		audioMixer.SetFloat("volumeMaster", volume);
