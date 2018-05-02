@@ -401,6 +401,21 @@ Prefab:
       propertyPath: fisher1
       value: 
       objectReference: {fileID: 375722389}
+    - target: {fileID: 114557862780827054, guid: 46f68767486e1b542a8b523277f3febc,
+        type: 2}
+      propertyPath: yMax
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114557862780827054, guid: 46f68767486e1b542a8b523277f3febc,
+        type: 2}
+      propertyPath: yMin
+      value: -10
+      objectReference: {fileID: 0}
+    - target: {fileID: 114856885466412598, guid: 46f68767486e1b542a8b523277f3febc,
+        type: 2}
+      propertyPath: P1_yMax
+      value: -6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 46f68767486e1b542a8b523277f3febc, type: 2}
   m_IsPrefabParent: 0
@@ -1880,7 +1895,7 @@ MonoBehaviour:
   P1Line: {fileID: 1404769334}
   P2Line: {fileID: 75852811}
   P1_yMin: -10
-  P1_yMax: -5.3
+  P1_yMax: -6
   speed: 100
   lineDown: 0
   lineMoving: 0
@@ -1924,8 +1939,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   line: {fileID: 1404769334}
-  yMin: -6.5
-  yMax: -4
+  yMin: -10
+  yMax: 10
   speed: 50
 --- !u!4 &1031865581
 Transform:
@@ -2746,6 +2761,11 @@ Prefab:
       propertyPath: m_audioClip
       value: 
       objectReference: {fileID: 8300000, guid: 023ddc8296d292949a831ce109c09c26, type: 3}
+    - target: {fileID: 82180879969886370, guid: 96c5e87b896d52a4b87517a0e0f24216,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 96c5e87b896d52a4b87517a0e0f24216, type: 2}
   m_IsPrefabParent: 0
@@ -2811,7 +2831,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4826447530616664, guid: 3a9752509066de340af7ca19d702f832, type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 1975890446458498, guid: 3a9752509066de340af7ca19d702f832, type: 2}
       propertyPath: m_Name
@@ -3876,7 +3896,7 @@ Transform:
   m_LocalScale: {x: 2, y: 2, z: 2}
   m_Children: []
   m_Father: {fileID: 1267677833}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: -179.99998}
 --- !u!212 &2026038758
 SpriteRenderer:

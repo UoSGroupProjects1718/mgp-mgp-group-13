@@ -1499,6 +1499,11 @@ Prefab:
       propertyPath: m_Name
       value: MusicPlayer
       objectReference: {fileID: 0}
+    - target: {fileID: 82301480227272144, guid: 4cf926d987310b745908ae2c733b4b06,
+        type: 2}
+      propertyPath: m_Volume
+      value: 0.6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4cf926d987310b745908ae2c733b4b06, type: 2}
   m_IsPrefabParent: 0
@@ -3533,7 +3538,7 @@ AudioSource:
     type: 2}
   m_audioClip: {fileID: 8300000, guid: 81d5c7fe319a90e4baf12c0d711a611b, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.3
+  m_Volume: 0.6
   m_Pitch: 1
   Loop: 0
   Mute: 0
